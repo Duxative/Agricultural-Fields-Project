@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Dashboard">
+
+   <children>
+      <AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: WHITE;">
+         <children>
+            <ImageView fitHeight="68.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/Nochistongo.jpg" />
+               </image>
+            </ImageView>
+            <Pane layoutX="200.0" layoutY="68.0" prefHeight="700.0" prefWidth="1166.0" style="-fx-background-color: #F9f9f9;" styleClass="fondo" stylesheets="@../CSS/buttons.css">
+               <children>
+                  <JFXTreeTableView layoutX="390.0" layoutY="50.0" prefHeight="625.0" prefWidth="750.0" />
+                  <JFXComboBox layoutX="990.0" layoutY="14.0" prefWidth="150.0" />
+                  <Pane layoutX="25.0" layoutY="50.0" prefHeight="625.0" prefWidth="350.0" styleClass="fondo">
+                     <children>
+                        <JFXButton layoutX="256.0" layoutY="29.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" text="Button" />
+                        <JFXComboBox layoutX="25.0" layoutY="37.0" prefHeight="25.0" prefWidth="191.0" />
+                     </children></Pane>
+               </children>
+            </Pane>
+            <Pane prefHeight="768.0" prefWidth="200.0" stylesheets="@../CSS/buttons.css">
+               <children>
+                  <Button alignment="CENTER" layoutX="25.0" layoutY="100.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Dashboard">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-10.0">
+                           <image>
+                              <Image url="@../Black_icons/home.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button alignment="CENTER" layoutX="25.0" layoutY="165.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Enfermedades">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Black_icons/germs.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" layoutX="25.0" layoutY="230.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Recetas">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-15.0">
+                           <image>
+                              <Image url="@../Black_icons/recipe-book.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" layoutX="25.0" layoutY="290.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Inventario">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0">
+                           <image>
+                              <Image url="@../Black_icons/recipe-book.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children></Pane>
+            <Separator layoutY="68.0" prefWidth="1366.0" />
+            <Separator layoutX="200.0" orientation="VERTICAL" prefHeight="768.0" />
+            <JFXTextField layoutX="1200.0" layoutY="28.0" />
+            <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="1176.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Black_icons/Search.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

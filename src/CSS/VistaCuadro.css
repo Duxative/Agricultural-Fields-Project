@@ -1,0 +1,13 @@
+.button {
+-fx-background-color: #28C76F;
+-fx-text-fill: WHITE;
+-fx-font-weight: BOLD;
+}
+.top{
+-fx-background-color: #28C76F;
+-fx-text-fill: WHITE;
+-fx-font-weight: bold;
+}
+.jfx-combo-box {
+ -fx-alignment: CENTER;
+}

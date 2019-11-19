@@ -57,29 +57,19 @@
                </children></Pane>
             <Separator layoutX="200.0" orientation="VERTICAL" prefHeight="768.0" />
             <Separator layoutY="68.0" prefWidth="1366.0" />
-            <Pane layoutX="1150.0" layoutY="25.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #f9f9f9; -fx-background-radius: 50;">
-               <children>
-                  <JFXTextField alignment="CENTER" layoutX="40.0" layoutY="2.0" prefHeight="25.0" prefWidth="150.0" promptText="Search" />
-                  <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="10.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Black_icons/Search.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
             <Pane layoutX="202.0" layoutY="69.0" prefHeight="700.0" prefWidth="1166.0" style="-fx-background-color: #f9f9f9;">
                <children>
                   <JFXTreeTableView layoutX="50.0" layoutY="400.0" prefHeight="200.0" prefWidth="500.0" />
                   <JFXTreeTableView layoutX="600.0" layoutY="400.0" prefHeight="200.0" prefWidth="500.0" />
-                  <Text layoutX="305.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-                  <Text layoutX="800.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                  <Text layoutX="289.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                  <Text layoutX="839.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
                   <Pane layoutX="271.0" layoutY="267.0" prefHeight="200.0" prefWidth="200.0" />
                   <Pane layoutX="683.0" layoutY="219.0" prefHeight="200.0" prefWidth="200.0" />
                   <ImageView fitHeight="300.0" fitWidth="500.0" layoutX="50.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fitHeight="300.0" fitWidth="500.0" layoutX="600.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" />
-                  <JFXComboBox layoutX="950.0" layoutY="13.0" prefWidth="150.0" promptText="Enfermedad" />
                </children>
             </Pane>
+            <JFXComboBox layoutX="1195.0" layoutY="26.0" prefWidth="150.0" promptText="Enfermedad" />
          </children>
       </AnchorPane>
    </children>

@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.VistaCuadro">
    <children>
       <AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #f9f9f9;" stylesheets="@../CSS/VistaCuadro.css">
          <children>
@@ -22,7 +22,7 @@
                      <children>
                         <Text fill="WHITE" layoutX="120.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arbol" />
                      </children></Pane>
-                  <JFXTreeTableView layoutY="20.0" prefHeight="145.0" prefWidth="266.0" />
+                  <JFXTreeTableView fx:id="tablaArbol" layoutY="20.0" prefHeight="145.0" prefWidth="266.0" />
                </children></Pane>
             <Pane layoutX="316.0" layoutY="85.0" prefHeight="165.0" prefWidth="266.0" style="-fx-background-color: WHITE;">
                <children>
@@ -48,7 +48,7 @@
                </children>
             </Pane>
             <JFXTreeTableView layoutX="25.0" layoutY="300.0" prefHeight="237.0" prefWidth="850.0" />
-            <JFXButton layoutX="815.0" layoutY="550.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="Salir" />
+            <JFXButton layoutX="815.0" layoutY="550.0" mnemonicParsing="false" onMouseClicked="#Salir" prefHeight="30.0" prefWidth="60.0" text="Salir" />
             <JFXComboBox layoutX="607.0" layoutY="40.0" prefHeight="25.0" prefWidth="266.0" promptText="Cuadro" />
             <JFXComboBox layoutX="317.0" layoutY="40.0" prefHeight="25.0" prefWidth="266.0" promptText="Mes" />
             <JFXComboBox layoutX="25.0" layoutY="40.0" prefHeight="25.0" prefWidth="266.0" promptText="Año" />

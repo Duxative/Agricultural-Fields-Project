@@ -1,5 +1,7 @@
 package Botones;
 
+import Control.VistaCuadro;
+import Tablas.Arbol;
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -54,7 +56,6 @@ public class Accion {
     public static void abrirRecetas(MouseEvent event){abrirVentana("/Vistas/Recetas.fxml","Recetas.css",1366,768);cerrarVentanaActual(event);}
     public static void abrirCuadro(MouseEvent event){
         abrirVentana("/Vistas/VistaCuadro.fxml","Cuadro "+tomarNombreDeBoton(event),900,600);
-
     }
     public static void abrirDashboard(MouseEvent event){abrirVentana("/Vistas/Dashboard.fxml","Dashboard",1366,768);cerrarVentanaActual(event);}
 

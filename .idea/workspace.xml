@@ -55,6 +55,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -84,7 +85,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="C:/Program Files/Git/git-bash.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Vistas" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -92,11 +93,15 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Eduardo\Documents\GitHub\Agricultural-Fields-Project\src\Vistas" />
+      <recent name="C:\Users\Eduardo\Documents\GitHub\Agricultural-Fields-Project\src" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Eduardo\Documents\GitHub\Agricultural-Fields-Project\src" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Eduardo\Documents\GitHub\Agricultural-Fields-Project\src\Black_icons" />
     </key>
   </component>
   <component name="RunDashboard">

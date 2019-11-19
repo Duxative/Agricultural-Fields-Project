@@ -18,41 +18,42 @@
             </ImageView>
             <Pane prefHeight="768.0" prefWidth="200.0" stylesheets="@../CSS/buttons.css">
                <children>
-                  <Button alignment="CENTER" layoutX="25.0" layoutY="100.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Dashboard">
+                  <JFXButton fx:id="Dashboard" layoutX="25.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#btnDash" prefHeight="40.0" prefWidth="150.0" text="Dashboard">
                      <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-10.0">
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-23.0">
                            <image>
                               <Image url="@../Black_icons/home.png" />
                            </image>
                         </ImageView>
-                     </graphic></Button>
-                  <Button alignment="CENTER" layoutX="25.0" layoutY="165.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Enfermedades">
-                     <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Black_icons/germs.png" />
-                           </image>
-                        </ImageView>
                      </graphic>
-                  </Button>
-                  <Button alignment="CENTER" layoutX="25.0" layoutY="230.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Recetas">
+                  </JFXButton>
+                  <JFXButton fx:id="Inventario" layoutX="25.0" layoutY="150.0" mnemonicParsing="false" onMouseClicked="#btnInventario" prefHeight="40.0" prefWidth="150.0" text="Inventario">
                      <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-15.0">
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-24.0">
                            <image>
                               <Image url="@../Black_icons/recipe-book.png" />
                            </image>
                         </ImageView>
                      </graphic>
-                  </Button>
-                  <Button alignment="CENTER" layoutX="25.0" layoutY="290.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Inventario">
+                  </JFXButton>
+                  <JFXButton fx:id="Recetas" layoutX="25.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#btnRecetas" prefHeight="40.0" prefWidth="150.0" text="Recetas">
                      <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0">
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-30.0">
                            <image>
-                              <Image url="@../Black_icons/recipe-book.png" />
+                              <Image url="@../Black_icons/to-do-list.png" />
                            </image>
                         </ImageView>
                      </graphic>
-                  </Button>
+                  </JFXButton>
+                  <JFXButton layoutX="35.0" layoutY="250.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Enfermedades">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-22.0">
+                           <image>
+                              <Image url="@../Black_icons/to-do-list.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
                </children></Pane>
             <Separator layoutX="200.0" orientation="VERTICAL" prefHeight="768.0" />
             <Separator layoutY="68.0" prefWidth="1366.0" />

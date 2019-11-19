@@ -4,8 +4,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Dashboard">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Recetas">
 
    <children>
       <AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: WHITE;">
@@ -15,53 +16,133 @@
                   <Image url="@../Images/Nochistongo.jpg" />
                </image>
             </ImageView>
-            <Pane layoutX="200.0" layoutY="68.0" prefHeight="700.0" prefWidth="1166.0" style="-fx-background-color: #F9f9f9;" styleClass="fondo" stylesheets="@../CSS/buttons.css" />
-            <Pane prefHeight="768.0" prefWidth="200.0" stylesheets="@../CSS/buttons.css">
+            <Pane layoutX="200.0" layoutY="68.0" prefHeight="700.0" prefWidth="1166.0" style="-fx-background-color: #F9f9f9;" styleClass="fondo" stylesheets="@../CSS/Recetas.css">
                <children>
-                  <Button alignment="CENTER" layoutX="25.0" layoutY="100.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Dashboard">
-                     <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-10.0">
-                           <image>
-                              <Image url="@../Black_icons/home.png" />
-                           </image>
-                        </ImageView>
-                     </graphic></Button>
-                  <Button alignment="CENTER" layoutX="25.0" layoutY="165.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Enfermedades">
-                     <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Black_icons/germs.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Button alignment="CENTER" layoutX="25.0" layoutY="230.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Recetas">
-                     <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-15.0">
-                           <image>
-                              <Image url="@../Black_icons/recipe-book.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Button alignment="CENTER" layoutX="25.0" layoutY="290.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Inventario">
-                     <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0">
-                           <image>
-                              <Image url="@../Black_icons/recipe-book.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
+                  <Pane layoutX="50.0" layoutY="50.0" prefHeight="200.0" prefWidth="322.0" styleClass="fondoBlanco">
+                     <children>
+                        <JFXButton layoutY="160.0" mnemonicParsing="false" onMouseClicked="#agregarReceta" prefHeight="40.0" prefWidth="322.0" text="Agregar" />
+                        <ImageView fitHeight="159.0" fitWidth="322.0" pickOnBounds="true" preserveRatio="true" />
+                        <Text layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Producto: Austar" />
+                        <Text layoutX="10.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dosis:" />
+                        <JFXTextField layoutX="52.0" layoutY="38.0" prefHeight="30.0" prefWidth="69.0" />
+                        <Text layoutX="10.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuadro:" />
+                        <JFXTextField layoutX="65.0" layoutY="65.0" prefHeight="3.0" prefWidth="60.0" />
+                        <Text layoutX="176.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo de aplicacion:" />
+                        <JFXCheckBox layoutX="176.0" layoutY="81.0" mnemonicParsing="false" text="Foliar" />
+                        <JFXCheckBox layoutX="176.0" layoutY="110.0" mnemonicParsing="false" text="Por sistema" />
+                     </children></Pane>
+                  <Pane layoutX="422.0" layoutY="50.0" prefHeight="200.0" prefWidth="322.0" styleClass="fondoBlanco">
+                     <children>
+                        <JFXButton layoutY="160.0" mnemonicParsing="false" onMouseClicked="#agregarReceta" prefHeight="40.0" prefWidth="322.0" text="Agregar" />
+                        <ImageView fitHeight="159.0" fitWidth="322.0" pickOnBounds="true" preserveRatio="true" />
+                        <Text layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Producto: Kendo, Heretic" />
+                        <Text layoutX="10.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dosis:" />
+                        <JFXTextField layoutX="52.0" layoutY="38.0" prefHeight="30.0" prefWidth="69.0" />
+                        <Text layoutX="10.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuadro:" />
+                        <JFXTextField layoutX="65.0" layoutY="65.0" prefHeight="3.0" prefWidth="60.0" />
+                        <Text layoutX="176.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo de aplicacion:" />
+                        <JFXCheckBox layoutX="176.0" layoutY="81.0" mnemonicParsing="false" text="Foliar" />
+                        <JFXCheckBox layoutX="176.0" layoutY="110.0" mnemonicParsing="false" text="Por sistema" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="794.0" layoutY="50.0" prefHeight="200.0" prefWidth="322.0" styleClass="fondoBlanco">
+                     <children>
+                        <JFXButton layoutY="160.0" mnemonicParsing="false" onMouseClicked="#agregarReceta" prefHeight="40.0" prefWidth="322.0" text="Agregar" />
+                        <ImageView fitHeight="159.0" fitWidth="322.0" pickOnBounds="true" preserveRatio="true" />
+                        <Text layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Producto: Dap plus, Amistar gold" />
+                        <Text layoutX="10.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dosis:" />
+                        <JFXTextField layoutX="52.0" layoutY="38.0" prefHeight="30.0" prefWidth="69.0" />
+                        <Text layoutX="10.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuadro:" />
+                        <JFXTextField layoutX="65.0" layoutY="65.0" prefHeight="3.0" prefWidth="60.0" />
+                        <Text layoutX="176.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo de aplicacion:" />
+                        <JFXCheckBox layoutX="176.0" layoutY="81.0" mnemonicParsing="false" text="Foliar" />
+                        <JFXCheckBox layoutX="176.0" layoutY="110.0" mnemonicParsing="false" text="Por sistema" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="794.0" layoutY="300.0" prefHeight="200.0" prefWidth="322.0" styleClass="fondoBlanco">
+                     <children>
+                        <JFXButton layoutY="160.0" mnemonicParsing="false" onMouseClicked="#agregarReceta" prefHeight="40.0" prefWidth="322.0" text="Agregar" />
+                        <ImageView fitHeight="159.0" fitWidth="322.0" pickOnBounds="true" preserveRatio="true" />
+                        <Text layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Producto: Urea" />
+                        <Text layoutX="10.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dosis:" />
+                        <JFXTextField layoutX="52.0" layoutY="38.0" prefHeight="30.0" prefWidth="69.0" />
+                        <Text layoutX="10.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuadro:" />
+                        <JFXTextField layoutX="65.0" layoutY="65.0" prefHeight="3.0" prefWidth="60.0" />
+                        <Text layoutX="176.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo de aplicacion:" />
+                        <JFXCheckBox layoutX="176.0" layoutY="81.0" mnemonicParsing="false" text="Foliar" />
+                        <JFXCheckBox layoutX="176.0" layoutY="110.0" mnemonicParsing="false" text="Por sistema" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="422.0" layoutY="300.0" prefHeight="200.0" prefWidth="322.0" styleClass="fondoBlanco">
+                     <children>
+                        <JFXButton layoutY="160.0" mnemonicParsing="false" onMouseClicked="#agregarReceta" prefHeight="40.0" prefWidth="322.0" text="Agregar" />
+                        <ImageView fitHeight="159.0" fitWidth="322.0" pickOnBounds="true" preserveRatio="true" />
+                        <Text layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Producto: Go zinc 17" />
+                        <Text layoutX="10.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dosis:" />
+                        <JFXTextField layoutX="52.0" layoutY="38.0" prefHeight="30.0" prefWidth="69.0" />
+                        <Text layoutX="10.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuadro:" />
+                        <JFXTextField layoutX="65.0" layoutY="65.0" prefHeight="3.0" prefWidth="60.0" />
+                        <Text layoutX="176.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo de aplicacion:" />
+                        <JFXCheckBox layoutX="176.0" layoutY="81.0" mnemonicParsing="false" text="Foliar" />
+                        <JFXCheckBox layoutX="176.0" layoutY="110.0" mnemonicParsing="false" text="Por sistema" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="50.0" layoutY="300.0" prefHeight="200.0" prefWidth="322.0" styleClass="fondoBlanco">
+                     <children>
+                        <JFXButton layoutY="160.0" mnemonicParsing="false" onMouseClicked="#agregarReceta" prefHeight="40.0" prefWidth="322.0" text="Agregar" />
+                        <ImageView fitHeight="159.0" fitWidth="322.0" pickOnBounds="true" preserveRatio="true" />
+                        <Text layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Producto: Cabrio C" />
+                        <Text layoutX="10.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dosis:" />
+                        <JFXTextField layoutX="52.0" layoutY="38.0" prefHeight="30.0" prefWidth="69.0" />
+                        <Text layoutX="10.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuadro:" />
+                        <JFXTextField layoutX="65.0" layoutY="65.0" prefHeight="3.0" prefWidth="60.0" />
+                        <Text layoutX="176.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo de aplicacion:" />
+                        <JFXCheckBox layoutX="176.0" layoutY="81.0" mnemonicParsing="false" text="Foliar" />
+                        <JFXCheckBox layoutX="176.0" layoutY="110.0" mnemonicParsing="false" text="Por sistema" />
+                     </children>
+                  </Pane>
                </children></Pane>
+            <Pane prefHeight="768.0" prefWidth="200.0" stylesheets="@../CSS/buttons.css">
+                <children>
+                    <JFXButton layoutX="25.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#btnDash" prefHeight="40.0" prefWidth="150.0" text="Dashboard">
+                        <graphic>
+                            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-23.0">
+                                <image>
+                                    <Image url="@../Black_icons/home.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </JFXButton>
+                    <JFXButton layoutX="25.0" layoutY="150.0" mnemonicParsing="false" onMouseClicked="#btnInventario" prefHeight="40.0" prefWidth="150.0" text="Inventario">
+                        <graphic>
+                            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-24.0">
+                                <image>
+                                    <Image url="@../Black_icons/recipe-book.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </JFXButton>
+                    <JFXButton layoutX="25.0" layoutY="200.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Recetas">
+                        <graphic>
+                            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-30.0">
+                                <image>
+                                    <Image url="@../Black_icons/to-do-list.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </JFXButton>
+                    <JFXButton layoutX="35.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#btnEnfermedades" prefHeight="40.0" prefWidth="150.0" text="Enfermedades">
+                        <graphic>
+                            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-22.0">
+                                <image>
+                                    <Image url="@../Black_icons/to-do-list.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </JFXButton>
+                </children></Pane>
             <Separator layoutY="68.0" prefWidth="1366.0" />
             <Separator layoutX="200.0" orientation="VERTICAL" prefHeight="768.0" />
-            <JFXTextField layoutX="1200.0" layoutY="28.0" />
-            <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="1176.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Black_icons/Search.png" />
-               </image>
-            </ImageView>
          </children>
       </AnchorPane>
    </children>

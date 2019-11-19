@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Dashboard">
+<StackPane  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Inventario">
 
    <children>
       <AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #f9f9f9;" stylesheets="@../CSS/Inventario.css">
@@ -18,7 +18,7 @@
             </Pane>
             <Pane layoutX="25.0" layoutY="115.0" prefHeight="460.0" prefWidth="400.0" styleClass="blancos">
                <children>
-                  <JFXButton layoutX="324.0" layoutY="32.0" mnemonicParsing="false" text="Agregar" />
+                  <JFXButton layoutX="324.0" layoutY="32.0" mnemonicParsing="false" onMouseClicked="#btnAddArticle" text="Agregar" />
                   <Text layoutX="24.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Articulo:">
                      <font>
                         <Font size="14.0" />
@@ -52,18 +52,18 @@
                   <JFXTextField fx:id="addField" labelFloat="true" layoutX="83.0" layoutY="245.0" prefHeight="25.0" prefWidth="75.0" />
                   <Separator layoutY="330.0" prefWidth="400.0" />
                   <Separator layoutX="200.0" layoutY="190.0" orientation="VERTICAL" prefHeight="140.0" prefWidth="3.0" />
-                  <JFXButton layoutX="107.0" layoutY="293.0" mnemonicParsing="false" text="Agregar" />
+                  <JFXButton layoutX="107.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#btnAdd" text="Agregar" />
                   <JFXComboBox fx:id="comboRemove" layoutX="216.0" layoutY="205.0" prefWidth="150.0" />
-                  <Text layoutX="212.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad:">
+                  <Text layoutX="212.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad:">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Text>
                   <JFXTextField fx:id="removeField" labelFloat="true" layoutX="287.0" layoutY="242.0" prefHeight="25.0" prefWidth="75.0" />
-                  <JFXButton layoutX="312.0" layoutY="293.0" mnemonicParsing="false" text="Quitar" />
+                  <JFXButton layoutX="312.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#btnRemove" text="Quitar" />
                </children>
             </Pane>
-            <JFXComboBox layoutX="25.0" layoutY="75.0" prefHeight="25.0" prefWidth="400.0" />
+            <JFXComboBox fx:id="ComboCat" layoutX="25.0" layoutY="75.0" prefHeight="25.0" prefWidth="400.0" />
          </children>
       </AnchorPane>
    </children>

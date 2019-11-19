@@ -44,15 +44,15 @@
                </children></Pane>
             <Pane layoutX="25.0" layoutY="275.0" prefHeight="25.0" prefWidth="850.0" styleClass="top">
                <children>
-                  <Text fill="WHITE" layoutX="410.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="top" text="Trabajadores" />
+                  <Text fill="WHITE" layoutX="367.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="top" text="Historial de acciones" />
                </children>
             </Pane>
-            <JFXTreeTableView layoutX="25.0" layoutY="300.0" prefHeight="165.0" prefWidth="850.0" />
+            <JFXTreeTableView layoutX="25.0" layoutY="300.0" prefHeight="237.0" prefWidth="850.0" />
             <JFXButton layoutX="815.0" layoutY="550.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="Salir" />
             <JFXComboBox layoutX="607.0" layoutY="40.0" prefHeight="25.0" prefWidth="266.0" promptText="Cuadro" />
             <JFXComboBox layoutX="317.0" layoutY="40.0" prefHeight="25.0" prefWidth="266.0" promptText="Mes" />
             <JFXComboBox layoutX="25.0" layoutY="40.0" prefHeight="25.0" prefWidth="266.0" promptText="Año" />
-            <JFXButton layoutX="25.0" layoutY="553.0" mnemonicParsing="false" text="Historial" />
+            <JFXButton layoutX="25.0" layoutY="553.0" mnemonicParsing="false" text="Agregar o modificar" />
          </children>
       </AnchorPane>
    </children>

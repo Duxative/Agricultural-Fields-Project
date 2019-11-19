@@ -5,3 +5,12 @@
 -fx-background-color: #28C76F;
 -fx-text-fill: WHITE;
 }
+.jfx-text-field {
+    -jfx-focus-color: #28C76F;
+    -fx-alignment: center;
+}
+
+.jfx-combo-box {
+       -jfx-focus-color: #28C76F;
+       -fx-alignment: center;
+       }

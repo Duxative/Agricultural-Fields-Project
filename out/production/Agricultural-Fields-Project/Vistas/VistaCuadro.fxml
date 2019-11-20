@@ -8,51 +8,55 @@
    <children>
       <AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #f9f9f9;" stylesheets="@../CSS/VistaCuadro.css">
          <children>
+            <JFXTextField fx:id="historial" layoutX="375.0" />
+            <JFXTextField fx:id="daños" layoutX="250.0" />
+            <JFXTextField fx:id="terreno" layoutX="150.0" />
+            <JFXTextField fx:id="arbol" layoutX="190.0" />
             <Pane prefHeight="30.0" prefWidth="900.0" style="-fx-background-color: #28C76F;">
                <children>
-                  <Text fill="WHITE" layoutX="360.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre del cuadro y el cultivo">
+                  <Text fx:id="titulo" fill="WHITE" layoutX="360.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre del cuadro y el cultivo">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Text>
                </children></Pane>
-            <Pane layoutX="25.0" layoutY="85.0" prefHeight="165.0" prefWidth="266.0" style="-fx-background-color: WHITE;">
+            <Pane layoutX="25.0" layoutY="85.0" prefHeight="140.0" prefWidth="506.0" style="-fx-background-color: WHITE;">
                <children>
-                  <Pane prefHeight="20.0" prefWidth="266.0" styleClass="top">
+                  <Pane layoutY="4.0" prefHeight="20.0" prefWidth="506.0" styleClass="top">
                      <children>
-                        <Text fill="WHITE" layoutX="120.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arbol" />
+                        <Text fill="WHITE" layoutX="237.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arbol" />
                      </children></Pane>
-                  <JFXTreeTableView fx:id="tablaArbol" layoutY="20.0" prefHeight="145.0" prefWidth="266.0" />
+                  <JFXTreeTableView fx:id="tablaArbol" layoutY="20.0" prefHeight="120.0" prefWidth="506.0" />
                </children></Pane>
-            <Pane layoutX="316.0" layoutY="85.0" prefHeight="165.0" prefWidth="266.0" style="-fx-background-color: WHITE;">
+            <Pane layoutX="25.0" layoutY="251.0" prefHeight="130.0" prefWidth="506.0" style="-fx-background-color: WHITE;">
                <children>
-                  <Pane prefHeight="20.0" prefWidth="266.0" styleClass="top">
+                  <Pane prefHeight="20.0" prefWidth="506.0" styleClass="top">
                      <children>
-                        <Text fill="WHITE" layoutX="120.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Terreno" />
+                        <Text fill="WHITE" layoutX="231.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Terreno" />
                      </children>
                   </Pane>
-                  <JFXTreeTableView layoutY="20.0" prefHeight="145.0" prefWidth="266.0" />
+                  <JFXTreeTableView fx:id="cuadroTerreno" layoutY="20.0" prefHeight="110.0" prefWidth="506.0" />
                </children></Pane>
-            <Pane layoutX="607.0" layoutY="85.0" prefHeight="165.0" prefWidth="266.0" style="-fx-background-color: WHITE;">
+            <Pane layoutX="563.0" layoutY="85.0" prefHeight="296.0" prefWidth="310.0" style="-fx-background-color: WHITE;">
                <children>
-                  <JFXTreeTableView layoutY="20.0" prefHeight="145.0" prefWidth="266.0" />
-                  <Pane prefHeight="20.0" prefWidth="266.0" styleClass="top">
+                  <JFXTreeTableView fx:id="cuadroDaño" layoutY="20.0" prefHeight="278.0" prefWidth="310.0" />
+                  <Pane prefHeight="20.0" prefWidth="310.0" styleClass="top">
                      <children>
-                        <Text fill="WHITE" layoutX="120.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Daños" />
+                        <Text fill="WHITE" layoutX="137.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Daños" />
                      </children>
                   </Pane>
                </children></Pane>
-            <Pane layoutX="25.0" layoutY="275.0" prefHeight="25.0" prefWidth="850.0" styleClass="top">
+            <Pane layoutX="25.0" layoutY="390.0" prefHeight="25.0" prefWidth="850.0" styleClass="top">
                <children>
                   <Text fill="WHITE" layoutX="367.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="top" text="Historial de acciones" />
                </children>
             </Pane>
-            <JFXTreeTableView layoutX="25.0" layoutY="300.0" prefHeight="237.0" prefWidth="850.0" />
-            <JFXButton layoutX="815.0" layoutY="550.0" mnemonicParsing="false" onMouseClicked="#Salir" prefHeight="30.0" prefWidth="60.0" text="Salir" />
-            <JFXComboBox layoutX="607.0" layoutY="40.0" prefHeight="25.0" prefWidth="266.0" promptText="Cuadro" />
-            <JFXComboBox layoutX="317.0" layoutY="40.0" prefHeight="25.0" prefWidth="266.0" promptText="Mes" />
-            <JFXComboBox layoutX="25.0" layoutY="40.0" prefHeight="25.0" prefWidth="266.0" promptText="Año" />
-            <JFXButton layoutX="25.0" layoutY="553.0" mnemonicParsing="false" text="Nueva temporada" />
+            <JFXTreeTableView fx:id="cuadroHistorial" layoutX="25.0" layoutY="416.0" prefHeight="127.0" prefWidth="850.0" />
+            <JFXButton layoutX="795.0" layoutY="550.0" mnemonicParsing="false" onMouseClicked="#Salir" prefHeight="30.0" prefWidth="80.0" text="Actualizar" />
+            <JFXComboBox fx:id="cuadro" layoutX="607.0" layoutY="40.0" prefHeight="25.0" prefWidth="266.0" promptText="Cuadro" />
+            <JFXComboBox fx:id="mes" layoutX="317.0" layoutY="40.0" prefHeight="25.0" prefWidth="266.0" promptText="Mes" visible="false" />
+            <JFXComboBox fx:id="año" layoutX="25.0" layoutY="40.0" prefHeight="25.0" prefWidth="266.0" promptText="Año" visible="false" />
+            <JFXButton layoutX="25.0" layoutY="553.0" mnemonicParsing="false" text="Nueva temporada" visible="false" />
          </children>
       </AnchorPane>
    </children>

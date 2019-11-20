@@ -11,3 +11,6 @@
 .jfx-combo-box {
  -fx-alignment: CENTER;
 }
+.tree-table-cell {
+    -fx-alignment: center ;
+}

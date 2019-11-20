@@ -1,7 +1,11 @@
 package Control;
 
 import DB.DBConnection;
-import Tablas.Arbol;
+import DB.Query;
+import Tablas.Inventario.ControlInvetario;
+import Tablas.Vista;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXTreeTableView;
 import com.mysql.jdbc.Connection;
 import javafx.fxml.FXML;
@@ -13,16 +17,21 @@ import java.util.ResourceBundle;
 
 public class Inventario implements Initializable {
     private static Connection connection = (Connection) DBConnection.getConnection();
-
+    @FXML
+    private JFXTreeTableView inventoryTable;
+    @FXML
+    private JFXComboBox comboAdd,comboRemove;
+    @FXML
+    private JFXTextField searchField, ArticleField, DescriptionField,quantityField,unitField;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        Vista.iniciarInventario(comboAdd,comboRemove,inventoryTable,searchField,connection);
     }
 
     @FXML
     void btnAddArticle(MouseEvent click){
-
+        Vista.agregarFila(ArticleField,quantityField,DescriptionField,unitField,inventoryTable,comboAdd,comboRemove,connection);
     }
 
     @FXML

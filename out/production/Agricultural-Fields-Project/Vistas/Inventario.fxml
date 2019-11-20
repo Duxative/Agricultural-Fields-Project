@@ -5,12 +5,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Inventario">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Inventario">
 
    <children>
       <AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #f9f9f9;" stylesheets="@../CSS/Inventario.css">
          <children>
-            <JFXTreeTableView fx:id="InventoryTable" layoutX="475.0" layoutY="75.0" prefHeight="500.0" prefWidth="400.0" />
+            <JFXTreeTableView fx:id="inventoryTable" layoutX="475.0" layoutY="75.0" prefHeight="500.0" prefWidth="400.0" />
             <Pane prefHeight="50.0" prefWidth="900.0" styleClass="blancos">
                <children>
                   <JFXTextField fx:id="searchField" labelFloat="true" layoutX="751.0" layoutY="13.0" promptText="Buscar" />
@@ -61,9 +61,10 @@
                   </Text>
                   <JFXTextField fx:id="removeField" labelFloat="true" layoutX="287.0" layoutY="242.0" prefHeight="25.0" prefWidth="75.0" />
                   <JFXButton layoutX="312.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#btnRemove" text="Quitar" />
+                  <JFXTextField fx:id="textfield" layoutX="57.0" layoutY="359.0" />
                </children>
             </Pane>
-            <JFXComboBox fx:id="ComboCat" layoutX="25.0" layoutY="75.0" prefHeight="25.0" prefWidth="400.0" />
+            <JFXComboBox fx:id="comboCat" layoutX="25.0" layoutY="75.0" prefHeight="25.0" prefWidth="400.0" visible="false" />
          </children>
       </AnchorPane>
    </children>

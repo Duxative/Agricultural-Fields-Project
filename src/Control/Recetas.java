@@ -1,16 +1,21 @@
 package Control;
 
 import Botones.Accion;
+import DB.DBConnection;
+import DB.Query;
+import Tablas.Vista;
 import com.jfoenix.controls.JFXButton;
+import com.mysql.jdbc.Connection;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class Recetas implements Initializable {
-
+    private static Connection connection = (Connection) DBConnection.getConnection();
     private JFXButton Inventario,Enfermedades,Dashboard;
 
     @Override
@@ -28,14 +33,14 @@ public class Recetas implements Initializable {
     }
 
     @FXML
-    void btnInventario(MouseEvent event){
+    void btnInventario(MouseEvent event) throws SQLException {
         Accion.abrirInventario();
     }
 
     @FXML
     void agregarReceta(MouseEvent event){
-
-
+        
     }
+
 
 }

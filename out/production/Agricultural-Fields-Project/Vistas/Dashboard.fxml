@@ -67,7 +67,7 @@
                            </children></Pane>
                         <Pane layoutX="422.0" layoutY="25.0" prefHeight="200.0" prefWidth="322.0" styleClass="fondo">
                            <children>
-                              <JFXTreeTableView layoutY="19.0" prefHeight="180.0" prefWidth="322.0" />
+                              <JFXTreeTableView fx:id="tablaViajes" layoutY="19.0" prefHeight="180.0" prefWidth="322.0" />
                               <Text layoutX="105.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Informacion de viajes" />
                            </children></Pane>
                         <Pane layoutX="794.0" layoutY="25.0" prefHeight="200.0" prefWidth="322.0" styleClass="fondo">

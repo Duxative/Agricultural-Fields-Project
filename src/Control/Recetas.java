@@ -39,7 +39,7 @@ public class Recetas implements Initializable {
 
     @FXML
     void agregarReceta(MouseEvent event){
-        
+
     }
 
 

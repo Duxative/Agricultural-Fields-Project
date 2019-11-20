@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-11-2019 a las 09:31:39
+-- Tiempo de generación: 20-11-2019 a las 21:07:47
 -- Versión del servidor: 10.4.8-MariaDB
 -- Versión de PHP: 7.3.11
 
@@ -43,7 +43,28 @@ CREATE TABLE `arbol` (
 --
 
 INSERT INTO `arbol` (`ID_arb`, `edad`, `estado_actual`, `plaga_o_enfermedad`, `cantidad_de_arboles`, `cultivo`, `cuadro`) VALUES
-(1, 5, 'chido', 'ninguna', 2000, 'Nuez', '7A');
+(1, 5, 'chido', 'ninguna', 2000, 'Nuez', '7A'),
+(2, 8, 'no se', 'pulgon blanco', 200, 'Nuez', '7B');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `categorias`
+--
+
+CREATE TABLE `categorias` (
+  `ID_cat` int(10) NOT NULL,
+  `categoria` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `categorias`
+--
+
+INSERT INTO `categorias` (`ID_cat`, `categoria`) VALUES
+(1, 'Herramientas'),
+(2, 'Fertilizantes'),
+(3, 'Disponible');
 
 -- --------------------------------------------------------
 
@@ -58,6 +79,14 @@ CREATE TABLE `daños` (
   `Causa` varchar(50) NOT NULL,
   `cuadro` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `daños`
+--
+
+INSERT INTO `daños` (`ID_dam`, `Lugar`, `Sintoma`, `Causa`, `cuadro`) VALUES
+(1, 'Hoja', 'mielosa', 'Humedad', '7A'),
+(2, 'raiz', 'rota', 'topos', '7B');
 
 -- --------------------------------------------------------
 
@@ -75,6 +104,13 @@ CREATE TABLE `historial_acciones` (
   `receta` varchar(50) NOT NULL,
   `clima` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `historial_acciones`
+--
+
+INSERT INTO `historial_acciones` (`ID_HA`, `accion`, `fecha`, `cuadro`, `descripcion`, `producto`, `receta`, `clima`) VALUES
+(1, 'agregar', 'ayer', '7B', 'Pos que te puedo decir? al chile no se', 'agua', 'ninguna', 'Seco');
 
 -- --------------------------------------------------------
 
@@ -106,6 +142,17 @@ CREATE TABLE `inventario` (
   `Estado` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `inventario`
+--
+
+INSERT INTO `inventario` (`ID_INV`, `categoria`, `producto`, `cantidad`, `Descripcion`, `Estado`) VALUES
+(1, 'Herramientas', 'Martillo', 2, 'Martillos normales', 'Disponible'),
+(2, 'Fertilizantes', 'Acadian', 20, 'Fertilizante en litros', 'No disponible'),
+(3, 'random', 'papa', 12, 'bonita', 'chido'),
+(4, 'random', 'papa', 12, 'bonita', 'chido'),
+(5, 'random', 'Fierro', 80, 'del pariente', 'bonito');
+
 -- --------------------------------------------------------
 
 --
@@ -136,6 +183,28 @@ CREATE TABLE `problema_en_cuadros` (
   `problema` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `terreno`
+--
+
+CREATE TABLE `terreno` (
+  `ID_terreno` int(30) NOT NULL,
+  `fertilidad` varchar(30) NOT NULL,
+  `estado_actual` varchar(30) NOT NULL,
+  `tipo_riego` varchar(30) NOT NULL,
+  `fecha` varchar(20) NOT NULL,
+  `cuadro` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `terreno`
+--
+
+INSERT INTO `terreno` (`ID_terreno`, `fertilidad`, `estado_actual`, `tipo_riego`, `fecha`, `cuadro`) VALUES
+(1, 'musha', 'bueno', 'goteo', 'hoy', '7B');
+
 --
 -- Índices para tablas volcadas
 --
@@ -145,6 +214,12 @@ CREATE TABLE `problema_en_cuadros` (
 --
 ALTER TABLE `arbol`
   ADD PRIMARY KEY (`ID_arb`);
+
+--
+-- Indices de la tabla `categorias`
+--
+ALTER TABLE `categorias`
+  ADD PRIMARY KEY (`ID_cat`);
 
 --
 -- Indices de la tabla `daños`
@@ -183,6 +258,12 @@ ALTER TABLE `problema_en_cuadros`
   ADD PRIMARY KEY (`ID_PEC`);
 
 --
+-- Indices de la tabla `terreno`
+--
+ALTER TABLE `terreno`
+  ADD PRIMARY KEY (`ID_terreno`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -190,19 +271,25 @@ ALTER TABLE `problema_en_cuadros`
 -- AUTO_INCREMENT de la tabla `arbol`
 --
 ALTER TABLE `arbol`
-  MODIFY `ID_arb` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID_arb` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `categorias`
+--
+ALTER TABLE `categorias`
+  MODIFY `ID_cat` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `daños`
 --
 ALTER TABLE `daños`
-  MODIFY `ID_dam` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_dam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `historial_acciones`
 --
 ALTER TABLE `historial_acciones`
-  MODIFY `ID_HA` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_HA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `informacion_de_viajes`
@@ -214,7 +301,7 @@ ALTER TABLE `informacion_de_viajes`
 -- AUTO_INCREMENT de la tabla `inventario`
 --
 ALTER TABLE `inventario`
-  MODIFY `ID_INV` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_INV` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `nuez`
@@ -227,6 +314,12 @@ ALTER TABLE `nuez`
 --
 ALTER TABLE `problema_en_cuadros`
   MODIFY `ID_PEC` int(100) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `terreno`
+--
+ALTER TABLE `terreno`
+  MODIFY `ID_terreno` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

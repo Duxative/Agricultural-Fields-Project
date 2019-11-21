@@ -10,6 +10,8 @@ import com.jfoenix.controls.JFXTreeTableView;
 import com.mysql.jdbc.Connection;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
@@ -59,6 +61,12 @@ public class Dashboard implements Initializable {
         titulo = "Cuadro "+ Accion.tomarNombreDeBoton(event).toString()+" "+Query.Cultivo(connection);
         cuadro = Accion.tomarNombreDeBoton(event);
         Accion.abrirCuadro(event);
+    }
+    @FXML
+    void abrirVentaAccion(KeyEvent F2){
+        if (F2.getCode().equals(KeyCode.F2)){
+        Accion.abrirAddAction();
+        }
     }
 
 }

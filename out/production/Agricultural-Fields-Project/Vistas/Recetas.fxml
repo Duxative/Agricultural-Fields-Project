@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Recetas">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#abrirVentaAccion" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Recetas">
 
    <children>
       <AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: WHITE;">
@@ -20,85 +20,79 @@
                <children>
                   <Pane layoutX="50.0" layoutY="50.0" prefHeight="200.0" prefWidth="322.0" styleClass="fondoBlanco">
                      <children>
-                        <JFXButton layoutY="160.0" mnemonicParsing="false" onMouseClicked="#agregarReceta" prefHeight="40.0" prefWidth="322.0" text="Agregar" />
+                        <JFXButton layoutY="160.0" mnemonicParsing="false" onMouseClicked="#agregarReceta1" prefHeight="40.0" prefWidth="322.0" text="Agregar" />
                         <ImageView fitHeight="159.0" fitWidth="322.0" pickOnBounds="true" preserveRatio="true" />
-                        <Text layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Producto: Austar" />
+                        <Text fx:id="text1" layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Producto: Austar" />
                         <Text layoutX="10.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dosis:" />
-                        <JFXTextField layoutX="52.0" layoutY="38.0" prefHeight="30.0" prefWidth="69.0" />
+                        <JFXTextField fx:id="d1" layoutX="52.0" layoutY="38.0" prefHeight="30.0" prefWidth="69.0" />
                         <Text layoutX="10.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuadro:" />
-                        <JFXTextField layoutX="65.0" layoutY="65.0" prefHeight="3.0" prefWidth="60.0" />
+                        <JFXTextField fx:id="c1" layoutX="65.0" layoutY="65.0" prefHeight="3.0" prefWidth="60.0" />
                         <Text layoutX="176.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo de aplicacion:" />
-                        <JFXCheckBox layoutX="176.0" layoutY="81.0" mnemonicParsing="false" text="Foliar" />
-                        <JFXCheckBox layoutX="176.0" layoutY="110.0" mnemonicParsing="false" text="Por sistema" />
+                        <JFXComboBox fx:id="cb1" layoutX="175.0" layoutY="80.0" prefWidth="125.0" />
                      </children></Pane>
                   <Pane layoutX="422.0" layoutY="50.0" prefHeight="200.0" prefWidth="322.0" styleClass="fondoBlanco">
                      <children>
-                        <JFXButton layoutY="160.0" mnemonicParsing="false" onMouseClicked="#agregarReceta" prefHeight="40.0" prefWidth="322.0" text="Agregar" />
+                        <JFXButton layoutY="160.0" mnemonicParsing="false" onMouseClicked="#agregarReceta2" prefHeight="40.0" prefWidth="322.0" text="Agregar" />
                         <ImageView fitHeight="159.0" fitWidth="322.0" pickOnBounds="true" preserveRatio="true" />
-                        <Text layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Producto: Kendo, Heretic" />
+                        <Text fx:id="text2" layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Producto: Kendo, Heretic" />
                         <Text layoutX="10.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dosis:" />
-                        <JFXTextField layoutX="52.0" layoutY="38.0" prefHeight="30.0" prefWidth="69.0" />
+                        <JFXTextField fx:id="d2" layoutX="53.0" layoutY="40.0" prefHeight="30.0" prefWidth="69.0" />
                         <Text layoutX="10.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuadro:" />
-                        <JFXTextField layoutX="65.0" layoutY="65.0" prefHeight="3.0" prefWidth="60.0" />
+                        <JFXTextField fx:id="c2" layoutX="65.0" layoutY="65.0" prefHeight="3.0" prefWidth="60.0" />
                         <Text layoutX="176.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo de aplicacion:" />
-                        <JFXCheckBox layoutX="176.0" layoutY="81.0" mnemonicParsing="false" text="Foliar" />
-                        <JFXCheckBox layoutX="176.0" layoutY="110.0" mnemonicParsing="false" text="Por sistema" />
+                        <JFXComboBox fx:id="cb2" layoutX="175.0" layoutY="80.0" prefWidth="120.0" />
                      </children>
                   </Pane>
                   <Pane layoutX="794.0" layoutY="50.0" prefHeight="200.0" prefWidth="322.0" styleClass="fondoBlanco">
                      <children>
-                        <JFXButton layoutY="160.0" mnemonicParsing="false" onMouseClicked="#agregarReceta" prefHeight="40.0" prefWidth="322.0" text="Agregar" />
+                        <JFXButton layoutY="160.0" mnemonicParsing="false" onMouseClicked="#agregarReceta3" prefHeight="40.0" prefWidth="322.0" text="Agregar" />
                         <ImageView fitHeight="159.0" fitWidth="322.0" pickOnBounds="true" preserveRatio="true" />
-                        <Text layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Producto: Dap plus, Amistar gold" />
+                        <Text fx:id="text3" layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Producto: Dap plus, Amistar gold" />
                         <Text layoutX="10.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dosis:" />
-                        <JFXTextField layoutX="52.0" layoutY="38.0" prefHeight="30.0" prefWidth="69.0" />
+                        <JFXTextField fx:id="d3" layoutX="52.0" layoutY="38.0" prefHeight="30.0" prefWidth="69.0" />
                         <Text layoutX="10.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuadro:" />
-                        <JFXTextField layoutX="65.0" layoutY="65.0" prefHeight="3.0" prefWidth="60.0" />
+                        <JFXTextField fx:id="c3" layoutX="65.0" layoutY="65.0" prefHeight="3.0" prefWidth="60.0" />
                         <Text layoutX="176.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo de aplicacion:" />
-                        <JFXCheckBox layoutX="176.0" layoutY="81.0" mnemonicParsing="false" text="Foliar" />
-                        <JFXCheckBox layoutX="176.0" layoutY="110.0" mnemonicParsing="false" text="Por sistema" />
+                        <JFXComboBox fx:id="cb3" layoutX="175.0" layoutY="80.0" prefWidth="120.0" />
                      </children>
                   </Pane>
                   <Pane layoutX="794.0" layoutY="300.0" prefHeight="200.0" prefWidth="322.0" styleClass="fondoBlanco">
                      <children>
-                        <JFXButton layoutY="160.0" mnemonicParsing="false" onMouseClicked="#agregarReceta" prefHeight="40.0" prefWidth="322.0" text="Agregar" />
+                        <JFXButton layoutY="160.0" mnemonicParsing="false" onMouseClicked="#agregarReceta6" prefHeight="40.0" prefWidth="322.0" text="Agregar" />
                         <ImageView fitHeight="159.0" fitWidth="322.0" pickOnBounds="true" preserveRatio="true" />
-                        <Text layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Producto: Urea" />
+                        <Text fx:id="text6" layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Producto: Urea" />
                         <Text layoutX="10.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dosis:" />
-                        <JFXTextField layoutX="52.0" layoutY="38.0" prefHeight="30.0" prefWidth="69.0" />
+                        <JFXTextField fx:id="d6" layoutX="52.0" layoutY="38.0" prefHeight="30.0" prefWidth="69.0" />
                         <Text layoutX="10.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuadro:" />
-                        <JFXTextField layoutX="65.0" layoutY="65.0" prefHeight="3.0" prefWidth="60.0" />
+                        <JFXTextField fx:id="c6" layoutX="65.0" layoutY="65.0" prefHeight="3.0" prefWidth="60.0" />
                         <Text layoutX="176.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo de aplicacion:" />
-                        <JFXCheckBox layoutX="176.0" layoutY="81.0" mnemonicParsing="false" text="Foliar" />
-                        <JFXCheckBox layoutX="176.0" layoutY="110.0" mnemonicParsing="false" text="Por sistema" />
+                        <JFXComboBox fx:id="cb6" layoutX="175.0" layoutY="80.0" prefWidth="120.0" />
                      </children>
                   </Pane>
                   <Pane layoutX="422.0" layoutY="300.0" prefHeight="200.0" prefWidth="322.0" styleClass="fondoBlanco">
                      <children>
-                        <JFXButton layoutY="160.0" mnemonicParsing="false" onMouseClicked="#agregarReceta" prefHeight="40.0" prefWidth="322.0" text="Agregar" />
+                        <JFXButton layoutY="160.0" mnemonicParsing="false" onMouseClicked="#agregarReceta5" prefHeight="40.0" prefWidth="322.0" text="Agregar" />
                         <ImageView fitHeight="159.0" fitWidth="322.0" pickOnBounds="true" preserveRatio="true" />
-                        <Text layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Producto: Go zinc 17" />
+                        <Text fx:id="text5" layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Producto: Go zinc 17" />
                         <Text layoutX="10.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dosis:" />
-                        <JFXTextField layoutX="52.0" layoutY="38.0" prefHeight="30.0" prefWidth="69.0" />
+                        <JFXTextField fx:id="d5" layoutX="52.0" layoutY="38.0" prefHeight="30.0" prefWidth="69.0" />
                         <Text layoutX="10.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuadro:" />
-                        <JFXTextField layoutX="65.0" layoutY="65.0" prefHeight="3.0" prefWidth="60.0" />
+                        <JFXTextField fx:id="c5" layoutX="65.0" layoutY="65.0" prefHeight="3.0" prefWidth="60.0" />
                         <Text layoutX="176.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo de aplicacion:" />
-                        <JFXCheckBox layoutX="176.0" layoutY="81.0" mnemonicParsing="false" text="Foliar" />
-                        <JFXCheckBox layoutX="176.0" layoutY="110.0" mnemonicParsing="false" text="Por sistema" />
+                        <JFXComboBox fx:id="cb5" layoutX="175.0" layoutY="80.0" prefWidth="120.0" />
                      </children>
                   </Pane>
                   <Pane layoutX="50.0" layoutY="300.0" prefHeight="200.0" prefWidth="322.0" styleClass="fondoBlanco">
                      <children>
-                        <JFXButton layoutY="160.0" mnemonicParsing="false" onMouseClicked="#agregarReceta" prefHeight="40.0" prefWidth="322.0" text="Agregar" />
+                        <JFXButton layoutY="160.0" mnemonicParsing="false" onMouseClicked="#agregarReceta4" prefHeight="40.0" prefWidth="322.0" text="Agregar" />
                         <ImageView fitHeight="159.0" fitWidth="322.0" pickOnBounds="true" preserveRatio="true" />
-                        <Text layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Producto: Cabrio C" />
+                        <Text fx:id="text4" layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Producto: Cabrio C" />
                         <Text layoutX="10.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dosis:" />
-                        <JFXTextField layoutX="52.0" layoutY="38.0" prefHeight="30.0" prefWidth="69.0" />
+                        <JFXTextField fx:id="d4" layoutX="52.0" layoutY="38.0" prefHeight="30.0" prefWidth="69.0" />
                         <Text layoutX="10.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuadro:" />
-                        <JFXTextField layoutX="65.0" layoutY="65.0" prefHeight="3.0" prefWidth="60.0" />
+                        <JFXTextField fx:id="c4" layoutX="65.0" layoutY="65.0" prefHeight="3.0" prefWidth="60.0" />
                         <Text layoutX="176.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo de aplicacion:" />
-                        <JFXCheckBox layoutX="176.0" layoutY="81.0" mnemonicParsing="false" text="Foliar" />
-                        <JFXCheckBox layoutX="176.0" layoutY="110.0" mnemonicParsing="false" text="Por sistema" />
+                        <JFXComboBox fx:id="cb4" layoutX="175.0" layoutY="80.0" prefWidth="120.0" />
                      </children>
                   </Pane>
                </children></Pane>

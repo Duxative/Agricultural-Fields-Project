@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Inventario">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#abrirVentaAccion" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Inventario">
 
    <children>
       <AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #f9f9f9;" stylesheets="@../CSS/Inventario.css">
@@ -16,7 +16,7 @@
                   <JFXTextField fx:id="searchField" labelFloat="true" layoutX="751.0" layoutY="13.0" promptText="Buscar" />
                </children>
             </Pane>
-            <Pane layoutX="25.0" layoutY="115.0" prefHeight="460.0" prefWidth="400.0" styleClass="blancos">
+            <Pane layoutX="25.0" layoutY="115.0" prefHeight="333.0" prefWidth="400.0" styleClass="blancos">
                <children>
                   <JFXButton layoutX="324.0" layoutY="32.0" mnemonicParsing="false" onMouseClicked="#btnAddArticle" text="Agregar" />
                   <Text layoutX="24.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Articulo:">
@@ -61,7 +61,6 @@
                   </Text>
                   <JFXTextField fx:id="removeField" labelFloat="true" layoutX="287.0" layoutY="242.0" prefHeight="25.0" prefWidth="75.0" />
                   <JFXButton layoutX="312.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#btnRemove" text="Quitar" />
-                  <JFXTextField fx:id="textfield" layoutX="57.0" layoutY="359.0" />
                </children>
             </Pane>
             <JFXComboBox fx:id="comboCat" layoutX="25.0" layoutY="75.0" prefHeight="25.0" prefWidth="400.0" visible="false" />

@@ -15,7 +15,11 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXTreeTableView;
 import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
 import javafx.scene.text.Text;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Vista {
     // Vista Cuadro
@@ -62,10 +66,52 @@ public class Vista {
         descripcion.clear();
         estado.clear();
     }
-    public static void agregarReceta(Text producto, JFXTextField dosis, JFXTextField cuadro, JFXCheckBox tipoAplicion){
+    public static void agregarReceta(Text producto, JFXTextField dosis, JFXTextField cuadro, JFXComboBox tipoAplicion){
         Query.insertAction(producto,dosis,cuadro,tipoAplicion);
         dosis.clear();
         cuadro.clear();
 
     }
-}
+    public static void llenarComboBoxDaños(JFXComboBox comboBox1,JFXComboBox comboBox2,JFXComboBox comboBox3,JFXComboBox comboBox4,JFXComboBox comboBox5,JFXComboBox comboBox6,Connection connection){
+        try {
+
+            com.mysql.jdbc.PreparedStatement ps = (PreparedStatement) connection.prepareStatement("SELECT * FROM cuadros");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                comboBox1.getItems().add(rs.getString(2));
+                comboBox2.getItems().add(rs.getString(2));
+                comboBox3.getItems().add(rs.getString(2));
+                comboBox4.getItems().add(rs.getString(2));
+                comboBox5.getItems().add(rs.getString(2));
+                comboBox6.getItems().add(rs.getString(2));
+
+
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+    public static void llenarComboBoxRecetas(JFXComboBox comboBox1,JFXComboBox comboBox2,JFXComboBox comboBox3,JFXComboBox comboBox4,JFXComboBox comboBox5,JFXComboBox comboBox6,Connection connection){
+        try {
+
+            com.mysql.jdbc.PreparedStatement ps = (PreparedStatement) connection.prepareStatement("SELECT * FROM tipe_de_riego");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                comboBox1.getItems().add(rs.getString(2));
+                comboBox2.getItems().add(rs.getString(2));
+                comboBox3.getItems().add(rs.getString(2));
+                comboBox4.getItems().add(rs.getString(2));
+                comboBox5.getItems().add(rs.getString(2));
+                comboBox6.getItems().add(rs.getString(2));
+
+
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    }
+

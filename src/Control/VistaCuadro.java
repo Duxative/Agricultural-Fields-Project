@@ -1,5 +1,6 @@
 package Control;
 
+import Botones.Accion;
 import DB.DBConnection;
 import DB.Query;
 import Tablas.*;
@@ -12,6 +13,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -42,5 +45,11 @@ public class VistaCuadro implements Initializable {
     @FXML
     void Salir(MouseEvent click){
 
+    }
+    @FXML
+    void abrirVentaAccion(KeyEvent F2){
+        if (F2.getCode().equals(KeyCode.F2)){
+            Accion.abrirAddAction();
+        }
     }
 }

@@ -46,20 +46,19 @@ public class Accion {
  }
 
  // Acciones de ventanas especificas
-
-    public static String CambiarTitulo(String nombreBoton){
-    return nombreBoton;
-    }
     public static void abrirInventario(){
     abrirVentana("/Vistas/Inventario.fxml","Inventario",900,600);
     }
-    public static void abrirEnfermedades(MouseEvent event){abrirVentana("/Vistas/VistaEnfermedad.fxml","Enfermedades",1366,768);cerrarVentanaActual(event);}
+    public static void abrirEnfermedades(MouseEvent event){abrirVentana("/Vistas/Enfermedades.fxml","Enfermedades",1366,768);cerrarVentanaActual(event);}
     public static void abrirRecetas(MouseEvent event){abrirVentana("/Vistas/Recetas.fxml","Recetas",1366,768);cerrarVentanaActual(event);}
     public static void abrirCuadro(MouseEvent event){
         abrirVentana("/Vistas/VistaCuadro.fxml","Cuadro "+tomarNombreDeBoton(event),900,600);
 
     }
     public static void abrirDashboard(MouseEvent event){abrirVentana("/Vistas/Dashboard.fxml","Dashboard",1366,768);cerrarVentanaActual(event);}
+    public static void abrirAddAction(){
+        abrirVentana("/Vistas/AddAction.fxml","Acciones",450,300);
+    }
 
 
 

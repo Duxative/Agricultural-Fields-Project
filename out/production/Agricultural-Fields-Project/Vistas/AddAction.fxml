@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="300.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.AddAction">
+   <children>
+      <JFXTextField fx:id="accion" layoutX="48.0" layoutY="51.0" promptText="Accion" />
+      <JFXDatePicker fx:id="fecha" layoutX="200.0" layoutY="48.0" onKeyPressed="#fechaActual" promptText="Fecha" />
+      <JFXComboBox fx:id="cuadro" layoutX="41.0" layoutY="206.0" prefWidth="150.0" promptText="Cuadro" />
+      <JFXTextField fx:id="descripcion" layoutX="48.0" layoutY="153.0" promptText="Descripcion" />
+      <JFXTextField fx:id="producto" layoutX="48.0" layoutY="103.0" promptText="Producto" />
+      <JFXComboBox fx:id="receta" layoutX="200.0" layoutY="103.0" prefWidth="150.0" promptText="Receta" />
+      <JFXTextField fx:id="condiocionesClimaticas" layoutX="200.0" layoutY="153.0" promptText="Condiciones climaticas" />
+      <JFXButton layoutX="371.0" layoutY="261.0" mnemonicParsing="false" onMouseClicked="#agregar" text="Agregar" />
+   </children>
+</AnchorPane>

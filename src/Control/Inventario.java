@@ -1,5 +1,6 @@
 package Control;
 
+import Botones.Accion;
 import DB.DBConnection;
 import DB.Query;
 import Tablas.Inventario.ControlInvetario;
@@ -10,6 +11,8 @@ import com.jfoenix.controls.JFXTreeTableView;
 import com.mysql.jdbc.Connection;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
@@ -42,5 +45,11 @@ public class Inventario implements Initializable {
     @FXML
     void btnRemove(MouseEvent click){
 
+    }
+    @FXML
+    void abrirVentaAccion(KeyEvent F2){
+        if (F2.getCode().equals(KeyCode.F2)){
+            Accion.abrirAddAction();
+        }
     }
 }

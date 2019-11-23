@@ -87,16 +87,17 @@ public class ProblemaDeCuadro extends RecursiveTreeObject<ProblemaDeCuadro> {
     public static void eliminarConTecla(JFXTreeTableView treeView,Connection connection){
         int row = treeView.getSelectionModel().getSelectedIndex();
         try {
-            com.mysql.jdbc.PreparedStatement ps = (PreparedStatement) connection.prepareStatement("SELECT * FROM problema_de_cuadros");
+            com.mysql.jdbc.PreparedStatement ps = (PreparedStatement) connection.prepareStatement("SELECT * FROM problema_en_cuadros");
             ResultSet rs = ps.executeQuery();
             int aux = 0;
             while (rs.next()){
                 if ( aux == row){
                     try {
                         Connection con = (Connection) DBConnection.getConnection();
-                        PreparedStatement preparedStatement = (PreparedStatement) con.prepareStatement("DELETE FROM problema_de_cuadros WHERE id=?");
+                        PreparedStatement preparedStatement = (PreparedStatement) con.prepareStatement("DELETE FROM problema_en_cuadros WHERE ID_PEC=?");
                         preparedStatement.setString(1, rs.getString(1));
                         preparedStatement.executeUpdate();
+                        llenarTabla(treeView,connection);
                     }catch (SQLException e){e.printStackTrace();}
                 }
                 aux++;

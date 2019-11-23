@@ -16,20 +16,6 @@ import java.util.function.Predicate;
 
 public class ControlInvetario {
 
-    public static void llenarCategorias(JFXComboBox categorias, Connection connection){
-        try {
-            com.mysql.jdbc.PreparedStatement ps = (PreparedStatement) connection.prepareStatement("SELECT * FROM categorias");
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                categorias.getItems().add(rs.getString(2));
-
-            }
-
-        } catch (SQLException ex) {
-        ex.printStackTrace();
-        }
-
-    }
     public static void llenarProducto(JFXComboBox comboBox,Connection connection){
         try {
             com.mysql.jdbc.PreparedStatement ps = (PreparedStatement) connection.prepareStatement("SELECT * FROM inventario");
@@ -50,6 +36,18 @@ public class ControlInvetario {
             return categoria.getValue().toString();
         }
     }
-
+    public static void cambiarTabla(JFXComboBox comboBox,JFXTreeTableView treeTableView){
+        comboBox.valueProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                treeTableView.setPredicate(new Predicate<TreeItem<Inventario>>() {
+                    @Override
+                    public boolean test(TreeItem<Inventario> treeItem) {
+                        return treeItem.getValue().categoria.getValue().contains(newValue);
+                    }
+                });
+            }
+        });
+    }
 }
 

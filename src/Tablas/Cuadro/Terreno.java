@@ -108,9 +108,10 @@ public class Terreno extends RecursiveTreeObject<Terreno> {
                 if ( aux == row){
                     try {
                         Connection con = (Connection) DBConnection.getConnection();
-                        PreparedStatement preparedStatement = (PreparedStatement) con.prepareStatement("DELETE FROM terreno WHERE id=?");
+                        PreparedStatement preparedStatement = (PreparedStatement) con.prepareStatement("DELETE FROM terreno WHERE ID_terreno=?");
                         preparedStatement.setString(1, rs.getString(1));
                         preparedStatement.executeUpdate();
+                        llenarTabla(treeView,connection);
                     }catch (SQLException e){e.printStackTrace();}
                 }
                 aux++;

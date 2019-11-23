@@ -56,19 +56,27 @@
                      </graphic>
                   </JFXButton>
                </children></Pane>
-            <ScrollPane layoutX="201.0" layoutY="68.0" prefHeight="700.0" prefWidth="1163.0">
+            <ScrollPane layoutX="201.0" layoutY="68.0" prefHeight="700.0" prefWidth="1163.0" stylesheets="@../CSS/Dashboard.css">
                <content>
                   <AnchorPane prefHeight="680.0" prefWidth="1163.0" style="-fx-background-color: #F9F9F9;" stylesheets="@../CSS/buttons.css">
                      <children>
                         <Pane layoutX="50.0" layoutY="25.0" prefHeight="200.0" prefWidth="322.0" styleClass="fondo">
                            <children>
-                              <JFXTreeTableView fx:id="tablaProblemas" layoutY="20.0" prefHeight="180.0" prefWidth="322.0" />
-                              <Text layoutX="102.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Problemas en cuadros" />
+                              <Pane prefHeight="20.0" prefWidth="322.0" style="-fx-background-color: #28C76F;" />
+                              <JFXTreeTableView fx:id="tablaProblemas" layoutY="20.0" onKeyPressed="#deleteP" prefHeight="180.0" prefWidth="322.0" />
+                              <Text fill="WHITE" layoutX="102.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Problemas en cuadros">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Text>
                            </children></Pane>
                         <Pane layoutX="422.0" layoutY="25.0" prefHeight="200.0" prefWidth="322.0" styleClass="fondo">
                            <children>
-                              <JFXTreeTableView fx:id="tablaViajes" layoutY="19.0" prefHeight="180.0" prefWidth="322.0" />
-                              <Text layoutX="105.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Informacion de viajes" />
+                              <Pane prefHeight="20.0" prefWidth="322.0" style="-fx-background-color: #28C76F;" />
+                              <JFXTreeTableView fx:id="tablaViajes" layoutY="19.0" onKeyPressed="#deleteV" prefHeight="180.0" prefWidth="322.0" />
+                              <Text fill="WHITE" layoutX="105.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Informacion de viajes">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Text>
                            </children></Pane>
                         <Pane layoutX="794.0" layoutY="25.0" prefHeight="200.0" prefWidth="322.0" styleClass="fondo">
                            <children>
@@ -98,9 +106,14 @@
             <Separator layoutX="200.0" orientation="VERTICAL" prefHeight="768.0" />
             <Separator layoutY="68.0" prefWidth="1366.0" />
             <Text layoutX="213.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Condiciones climaticas:" />
-            <Text layoutX="213.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temperatura: 30 C" />
-            <Text layoutX="335.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Humedad: Baja" />
-            <Text layoutX="468.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Corrientes de aire: sin corrientes" />
+            <Text layoutX="345.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temperatura: 30 C" />
+            <Text layoutX="635.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Humedad: Baja" />
+            <Text layoutX="454.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Corrientes de aire: sin corrientes" />
+            <Text layoutX="213.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Atajos: F2 agregar Accion, F3 Agregar viaje, F5 Actualizar">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
    </children>

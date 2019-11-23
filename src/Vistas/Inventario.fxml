@@ -3,67 +3,38 @@
 <?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#abrirVentaAccion" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Inventario">
+<StackPane fx:id="stackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#abrirVentaAccion" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Inventario">
 
    <children>
       <AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #f9f9f9;" stylesheets="@../CSS/Inventario.css">
          <children>
-            <JFXTreeTableView fx:id="inventoryTable" layoutX="475.0" layoutY="75.0" prefHeight="500.0" prefWidth="400.0" />
+            <JFXTreeTableView fx:id="inventoryTable" layoutX="475.0" layoutY="75.0" onKeyPressed="#delete" prefHeight="500.0" prefWidth="400.0" />
             <Pane prefHeight="50.0" prefWidth="900.0" styleClass="blancos">
                <children>
                   <JFXTextField fx:id="searchField" labelFloat="true" layoutX="751.0" layoutY="13.0" promptText="Buscar" />
                </children>
             </Pane>
-            <Pane layoutX="25.0" layoutY="115.0" prefHeight="333.0" prefWidth="400.0" styleClass="blancos">
+            <Pane layoutX="25.0" layoutY="115.0" prefHeight="354.0" prefWidth="400.0" styleClass="blancos">
                <children>
-                  <JFXButton layoutX="324.0" layoutY="32.0" mnemonicParsing="false" onMouseClicked="#btnAddArticle" text="Agregar" />
-                  <Text layoutX="24.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Articulo:">
-                     <font>
-                        <Font size="14.0" />
-                     </font></Text>
-                  <JFXTextField fx:id="ArticleField" labelFloat="true" layoutX="85.0" layoutY="30.0" promptText="nombre articulo" />
-                  <Text layoutX="24.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad:">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <JFXTextField fx:id="quantityField" labelFloat="true" layoutX="87.0" layoutY="101.0" prefHeight="25.0" prefWidth="75.0" />
-                  <Text layoutX="24.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio unitario:">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <JFXTextField fx:id="unitField" labelFloat="true" layoutX="120.0" layoutY="139.0" prefHeight="25.0" prefWidth="59.0" />
-                  <Text layoutX="24.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descripcion:">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <JFXTextField fx:id="DescriptionField" labelFloat="true" layoutX="107.0" layoutY="68.0" />
-                  <Separator layoutY="190.0" prefWidth="400.0" />
-                  <JFXComboBox fx:id="comboAdd" layoutX="12.0" layoutY="205.0" prefWidth="150.0" />
-                  <Text layoutX="16.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad:">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <JFXTextField fx:id="addField" labelFloat="true" layoutX="83.0" layoutY="245.0" prefHeight="25.0" prefWidth="75.0" />
-                  <Separator layoutY="330.0" prefWidth="400.0" />
-                  <Separator layoutX="200.0" layoutY="190.0" orientation="VERTICAL" prefHeight="140.0" prefWidth="3.0" />
-                  <JFXButton layoutX="107.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#btnAdd" text="Agregar" />
-                  <JFXComboBox fx:id="comboRemove" layoutX="216.0" layoutY="205.0" prefWidth="150.0" />
-                  <Text layoutX="212.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad:">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <JFXTextField fx:id="removeField" labelFloat="true" layoutX="287.0" layoutY="242.0" prefHeight="25.0" prefWidth="75.0" />
-                  <JFXButton layoutX="312.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#btnRemove" text="Quitar" />
+                  <JFXButton layoutX="327.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#btnAddArticle" text="Agregar" />
+                  <JFXTextField fx:id="ArticleField" labelFloat="true" layoutX="15.0" layoutY="10.0" prefHeight="25.0" prefWidth="150.0" promptText="Articulo" />
+                  <JFXTextField fx:id="quantityField" labelFloat="true" layoutX="15.0" layoutY="90.0" prefHeight="25.0" prefWidth="150.0" promptText="Cantidad" />
+                  <JFXTextField fx:id="estado" labelFloat="true" layoutX="15.0" layoutY="130.0" prefHeight="25.0" prefWidth="150.0" promptText="Estado" />
+                  <JFXTextField fx:id="DescriptionField" labelFloat="true" layoutX="15.0" layoutY="50.0" prefHeight="25.0" prefWidth="150.0" promptText="Descripcion" />
+                  <Separator layoutY="210.0" prefWidth="400.0" />
+                  <JFXComboBox fx:id="comboAdd" labelFloat="true" layoutX="15.0" layoutY="220.0" prefWidth="150.0" promptText="Producto" styleClass="combo-box" />
+                  <JFXTextField fx:id="addField" labelFloat="true" layoutX="15.0" layoutY="260.0" prefHeight="25.0" prefWidth="150.0" promptText="Cantidad agregada" />
+                  <Separator layoutY="350.0" prefWidth="400.0" />
+                  <Separator layoutX="200.0" layoutY="210.0" orientation="VERTICAL" prefHeight="140.0" prefWidth="3.0" />
+                  <JFXButton layoutX="129.0" layoutY="318.0" mnemonicParsing="false" onMouseClicked="#btnAdd" text="Agregar" />
+                  <JFXComboBox fx:id="comboRemove" labelFloat="true" layoutX="215.0" layoutY="220.0" prefWidth="150.0" promptText="Producto" />
+                  <JFXTextField fx:id="removeField" labelFloat="true" layoutX="215.0" layoutY="260.0" prefHeight="25.0" prefWidth="150.0" promptText="Cantidad removida" />
+                  <JFXButton layoutX="337.0" layoutY="318.0" mnemonicParsing="false" onMouseClicked="#btnRemove" text="Quitar" />
+                  <JFXComboBox fx:id="comboCat2" labelFloat="true" layoutX="15.0" layoutY="170.0" prefWidth="150.0" promptText="Categoria" />
                </children>
             </Pane>
-            <JFXComboBox fx:id="comboCat" layoutX="25.0" layoutY="75.0" prefHeight="25.0" prefWidth="400.0" visible="false" />
+            <JFXComboBox fx:id="comboCat" labelFloat="true" layoutX="25.0" layoutY="75.0" prefHeight="25.0" prefWidth="400.0" promptText="Categorias" />
          </children>
       </AnchorPane>
    </children>

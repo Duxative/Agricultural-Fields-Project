@@ -1,6 +1,6 @@
 package Control;
 
-import Botones.Accion;
+import Botones.Ventanas;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.input.KeyCode;
@@ -18,20 +18,20 @@ public class VistaEnfermedad implements Initializable {
 
     @FXML
     void btnDash(MouseEvent event){
-        Accion.abrirDashboard(event);
+        Ventanas.abrirDashboard(event);
     }
     @FXML
     void btnRecetas(MouseEvent event){
-        Accion.abrirRecetas(event);
+        Ventanas.abrirRecetas(event);
     }
     @FXML
     void btnInventario(MouseEvent event){
-        Accion.abrirInventario();
+        Ventanas.abrirInventario();
     }
     @FXML
     void abrirVentaAccion(KeyEvent F2){
         if (F2.getCode().equals(KeyCode.F2)){
-            Accion.abrirAddAction();
+            Ventanas.abrirAddAction();
         }
     }
 

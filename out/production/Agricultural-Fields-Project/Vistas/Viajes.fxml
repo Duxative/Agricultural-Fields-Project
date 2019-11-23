@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane fx:id="stackPane" prefHeight="280.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Viajes">
+          <AnchorPane prefHeight="280.0" prefWidth="310.0" style="-fx-background-color: WHITE;" stylesheets="@../CSS/Recetas.css">
+          <children>
+         <Pane prefHeight="30.0" prefWidth="310.0" style="-fx-background-color: #28C76F;">
+            <children>
+               <Text fill="WHITE" layoutX="117.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Agregar Viaje">
+                  <font>
+                     <Font name="System Bold" size="12.0" />
+                  </font></Text>
+            </children></Pane>
+          <JFXButton layoutX="225.0" layoutY="50.0" mnemonicParsing="false" onMouseClicked="#agregar" text="Agregar" />
+         <JFXDatePicker fx:id="fechaViaje" defaultColor="#28c76f" layoutX="25.0" layoutY="49.0" prefWidth="150.0" promptText="Fecha de viaje" />
+         <JFXTextField fx:id="destino" labelFloat="true" layoutX="25.0" layoutY="93.0" prefWidth="150.0" promptText="Destino" />
+         <JFXComboBox fx:id="estado" labelFloat="true" layoutX="25.0" layoutY="136.0" prefWidth="150.0" promptText="Estado" />
+         <JFXTextField fx:id="conductor" labelFloat="true" layoutX="25.0" layoutY="179.0" prefWidth="150.0" promptText="Conductor" />
+         <JFXTextField fx:id="comentario" labelFloat="true" layoutX="25.0" layoutY="224.0" prefWidth="150.0" promptText="Comentario" />
+          </children>
+          </AnchorPane>
+       </StackPane>

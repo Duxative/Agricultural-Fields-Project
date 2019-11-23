@@ -127,9 +127,10 @@ public class Historial extends RecursiveTreeObject<Historial>{
                 if ( aux == row){
                     try {
                         Connection con = (Connection) DBConnection.getConnection();
-                        PreparedStatement preparedStatement = (PreparedStatement) con.prepareStatement("DELETE FROM historial_acciones WHERE id=?");
+                        PreparedStatement preparedStatement = (PreparedStatement) con.prepareStatement("DELETE FROM historial_acciones WHERE ID_HA=?");
                         preparedStatement.setString(1, rs.getString(1));
                         preparedStatement.executeUpdate();
+                        llenarTabla(treeView,connection);
                     }catch (SQLException e){e.printStackTrace();}
                 }
                 aux++;

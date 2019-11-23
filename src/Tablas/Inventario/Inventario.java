@@ -104,16 +104,17 @@ public class Inventario extends RecursiveTreeObject<Inventario> {
     public static void eliminarConTecla(JFXTreeTableView treeView,Connection connection){
         int row = treeView.getSelectionModel().getSelectedIndex();
         try {
-            com.mysql.jdbc.PreparedStatement ps = (PreparedStatement) connection.prepareStatement("SELECT * FROM SELECT * FROM inventario");
+            com.mysql.jdbc.PreparedStatement ps = (PreparedStatement) connection.prepareStatement("SELECT * FROM inventario");
             ResultSet rs = ps.executeQuery();
             int aux = 0;
             while (rs.next()){
                 if ( aux == row){
                     try {
                         Connection con = (Connection) DBConnection.getConnection();
-                        PreparedStatement preparedStatement = (PreparedStatement) con.prepareStatement("DELETE FROM SELECT * FROM inventario WHERE id=?");
+                        PreparedStatement preparedStatement = (PreparedStatement) con.prepareStatement("DELETE FROM inventario WHERE ID_INV=?");
                         preparedStatement.setString(1, rs.getString(1));
                         preparedStatement.executeUpdate();
+                        llenarTabla(treeView,connection);
                     }catch (SQLException e){e.printStackTrace();}
                 }
                 aux++;
@@ -130,8 +131,7 @@ public class Inventario extends RecursiveTreeObject<Inventario> {
                 treeView.setPredicate(new Predicate<TreeItem<Inventario>>() {
                     @Override
                     public boolean test(TreeItem<Inventario> treeItem) {
-                        boolean flag= treeItem.getValue().categoria.getValue().contains(newValue);
-                        return flag;
+                        return treeItem.getValue().producto.getValue().contains(newValue);
                     }
                 });
             }

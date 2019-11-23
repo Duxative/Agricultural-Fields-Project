@@ -10,6 +10,9 @@
     -fx-alignment: center;
 }
 
+.tree-table-cell {
+    -fx-alignment: center ;
+}
 .jfx-combo-box {
        -jfx-focus-color: #28C76F;
        -fx-alignment: center;

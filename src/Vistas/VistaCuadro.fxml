@@ -26,7 +26,7 @@
                      <children>
                         <Text fill="WHITE" layoutX="237.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arbol" />
                      </children></Pane>
-                  <JFXTreeTableView fx:id="tablaArbol" layoutY="20.0" prefHeight="120.0" prefWidth="506.0" />
+                  <JFXTreeTableView fx:id="tablaArbol" layoutY="20.0" onKeyPressed="#keyDelete" prefHeight="120.0" prefWidth="506.0" />
                </children></Pane>
             <Pane layoutX="25.0" layoutY="251.0" prefHeight="130.0" prefWidth="506.0" style="-fx-background-color: WHITE;">
                <children>
@@ -52,8 +52,8 @@
                </children>
             </Pane>
             <JFXTreeTableView fx:id="cuadroHistorial" layoutX="25.0" layoutY="416.0" prefHeight="127.0" prefWidth="850.0" />
-            <JFXButton layoutX="795.0" layoutY="550.0" mnemonicParsing="false" onMouseClicked="#Salir" prefHeight="30.0" prefWidth="80.0" text="Actualizar" />
-            <JFXComboBox fx:id="cuadro" layoutX="607.0" layoutY="40.0" prefHeight="25.0" prefWidth="266.0" promptText="Cuadro" />
+            <JFXButton layoutX="795.0" layoutY="550.0" mnemonicParsing="false" onMouseClicked="#actualizar" prefHeight="30.0" prefWidth="80.0" text="Actualizar" />
+            <JFXComboBox fx:id="cuadro" labelFloat="true" layoutX="563.0" layoutY="40.0" prefHeight="25.0" prefWidth="310.0" promptText="Cuadro" />
             <JFXComboBox fx:id="mes" layoutX="317.0" layoutY="40.0" prefHeight="25.0" prefWidth="266.0" promptText="Mes" visible="false" />
             <JFXComboBox fx:id="año" layoutX="25.0" layoutY="40.0" prefHeight="25.0" prefWidth="266.0" promptText="Año" visible="false" />
             <JFXButton layoutX="25.0" layoutY="553.0" mnemonicParsing="false" text="Nueva temporada" visible="false" />

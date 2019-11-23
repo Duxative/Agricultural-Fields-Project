@@ -1,6 +1,6 @@
 package Control;
 
-import Botones.Accion;
+import Botones.Ventanas;
 import DB.DBConnection;
 import DB.Query;
 import Tablas.Vista;
@@ -9,10 +9,12 @@ import com.jfoenix.controls.JFXTextField;
 import com.mysql.jdbc.Connection;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -28,20 +30,21 @@ public class Enfermedades implements Initializable {
     private JFXComboBox cb1,cb2,cb3,cb4,cb5,cb6;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Vista.llenarComboBoxDaños(cb1,cb2,cb3,cb4,cb5,cb6,connection);
+
+        Vista.llenarComboBoxCuadros(cb1,cb2,cb3,cb4,cb5,cb6,connection);
     }
     @FXML
     void btnDash(MouseEvent event){
-        Accion.abrirDashboard(event);
+        Ventanas.abrirDashboard(event);
     }
     @FXML
     void btnRecetas(MouseEvent event){
-        Accion.abrirRecetas(event);
+        Ventanas.abrirRecetas(event);
     }
 
     @FXML
     void btnInventario(MouseEvent event) throws SQLException {
-        Accion.abrirInventario();
+        Ventanas.abrirInventario();
     }
     @FXML
     void agregarReceta1(MouseEvent event) {
@@ -70,7 +73,7 @@ public class Enfermedades implements Initializable {
     @FXML
     void abrirVentaAccion(KeyEvent F2){
         if (F2.getCode().equals(KeyCode.F2)){
-            Accion.abrirAddAction();
+            Ventanas.abrirAddAction();
         }
     }
 

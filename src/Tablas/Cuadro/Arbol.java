@@ -1,6 +1,8 @@
 package Tablas.Cuadro;
 
+import Control.VistaCuadro;
 import DB.DBConnection;
+import Tablas.Inventario.Inventario;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXTreeTableColumn;
 import com.jfoenix.controls.JFXTreeTableView;
@@ -126,9 +128,11 @@ public class Arbol extends RecursiveTreeObject<Arbol> {
                 if ( aux == row){
                     try {
                         Connection con = (Connection) DBConnection.getConnection();
-                        PreparedStatement preparedStatement = (PreparedStatement) con.prepareStatement("DELETE FROM arbol WHERE id=?");
-                        preparedStatement.setString(1, rs.getString(1));
+
+                        PreparedStatement preparedStatement = (PreparedStatement) con.prepareStatement("DELETE FROM arbol WHERE ID_arb=?");
+                        preparedStatement.setInt(1, rs.getInt(1));
                         preparedStatement.executeUpdate();
+
                     }catch (SQLException e){e.printStackTrace();}
                 }
                 aux++;

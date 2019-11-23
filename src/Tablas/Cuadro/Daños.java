@@ -99,9 +99,10 @@ public class Daños extends RecursiveTreeObject<Daños> {
                 if ( aux == row){
                     try {
                         Connection con = (Connection) DBConnection.getConnection();
-                        PreparedStatement preparedStatement = (PreparedStatement) con.prepareStatement("DELETE FROM daños WHERE id=?");
+                        PreparedStatement preparedStatement = (PreparedStatement) con.prepareStatement("DELETE FROM daños WHERE ID_dam=?");
                         preparedStatement.setString(1, rs.getString(1));
                         preparedStatement.executeUpdate();
+                        llenarTabla(treeView,connection);
                     }catch (SQLException e){e.printStackTrace();}
                 }
                 aux++;

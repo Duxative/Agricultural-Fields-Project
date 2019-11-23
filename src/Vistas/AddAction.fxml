@@ -2,16 +2,27 @@
 
 <?import com.jfoenix.controls.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="300.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.AddAction">
-   <children>
-      <JFXTextField fx:id="accion" layoutX="48.0" layoutY="51.0" promptText="Accion" />
-      <JFXDatePicker fx:id="fecha" layoutX="200.0" layoutY="48.0" onKeyPressed="#fechaActual" promptText="Fecha" />
-      <JFXComboBox fx:id="cuadro" layoutX="41.0" layoutY="206.0" prefWidth="150.0" promptText="Cuadro" />
-      <JFXTextField fx:id="descripcion" layoutX="48.0" layoutY="153.0" promptText="Descripcion" />
-      <JFXTextField fx:id="producto" layoutX="48.0" layoutY="103.0" promptText="Producto" />
-      <JFXComboBox fx:id="receta" layoutX="200.0" layoutY="103.0" prefWidth="150.0" promptText="Receta" />
-      <JFXTextField fx:id="condiocionesClimaticas" layoutX="200.0" layoutY="153.0" promptText="Condiciones climaticas" />
-      <JFXButton layoutX="371.0" layoutY="261.0" mnemonicParsing="false" onMouseClicked="#agregar" text="Agregar" />
-   </children>
-</AnchorPane>
+<StackPane fx:id="stackPane" prefHeight="250.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.AddAction">
+          <AnchorPane prefHeight="250.0" prefWidth="310.0" style="-fx-background-color: WHITE;" stylesheets="@../CSS/Recetas.css">
+          <children>
+          <JFXTextField fx:id="accion" labelFloat="true" layoutX="25.0" layoutY="51.0" prefWidth="120.0" promptText="Accion" />
+          <JFXDatePicker fx:id="fecha" layoutX="160.0" layoutY="48.0" prefWidth="120.0" promptText="Fecha" />
+          <JFXComboBox fx:id="cuadro" labelFloat="true" layoutX="25.0" layoutY="206.0" prefWidth="120.0" promptText="Cuadro" />
+          <JFXTextField fx:id="descripcion" labelFloat="true" layoutX="25.0" layoutY="153.0" prefWidth="120.0" promptText="Descripcion" />
+          <JFXTextField fx:id="producto" labelFloat="true" layoutX="25.0" layoutY="103.0" prefWidth="120.0" promptText="Producto" />
+          <JFXComboBox fx:id="receta" labelFloat="true" layoutX="160.0" layoutY="103.0" prefWidth="120.0" promptText="Receta" />
+          <JFXTextField fx:id="condicionesClimaticas" labelFloat="true" layoutX="160.0" layoutY="153.0" prefWidth="120.0" promptText="Condiciones climaticas" />
+          <JFXButton layoutX="225.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#agregar" text="Agregar" />
+         <Pane prefHeight="30.0" prefWidth="310.0" style="-fx-background-color: #28C76F;">
+            <children>
+               <Text fill="WHITE" layoutX="112.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Agregar accion">
+                  <font>
+                     <Font name="System Bold" size="12.0" />
+                  </font>
+               </Text>
+            </children></Pane>
+          </children>
+          </AnchorPane>
+       </StackPane>

@@ -47,7 +47,7 @@
                      <children>
                         <JFXButton layoutY="160.0" mnemonicParsing="false" onMouseClicked="#agregarReceta3" prefHeight="40.0" prefWidth="322.0" text="Agregar" />
                         <ImageView fitHeight="159.0" fitWidth="322.0" pickOnBounds="true" preserveRatio="true" />
-                        <Text fx:id="d3" layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enfermedad:Pulgon negro" />
+                        <Text fx:id="text3" layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enfermedad:Pulgon negro" />
                         <Text layoutX="12.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Causa:" />
                         <JFXTextField fx:id="c3" layoutX="54.0" layoutY="32.0" prefHeight="30.0" prefWidth="69.0" />
                         <Text layoutX="12.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lugar:" />

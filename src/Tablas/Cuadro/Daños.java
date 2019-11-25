@@ -16,6 +16,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
+import javafx.scene.control.cell.TextFieldTreeTableCell;
 import javafx.util.Callback;
 
 import java.sql.ResultSet;
@@ -27,11 +28,11 @@ import java.util.logging.Logger;
 public class Daños extends RecursiveTreeObject<Daños> {
     StringProperty lugar, sintoma, causa, cuadro;
 
-    public Daños(){
+    public Daños() {
         super();
     }
 
-    public Daños(String lugar, String sintoma, String causa,String cuadro) {
+    public Daños(String lugar, String sintoma, String causa, String cuadro) {
         this.lugar = new SimpleStringProperty(lugar);
         this.sintoma = new SimpleStringProperty(sintoma);
         this.causa = new SimpleStringProperty(causa);
@@ -73,7 +74,7 @@ public class Daños extends RecursiveTreeObject<Daños> {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                daños.add(new Daños(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5)));
+                daños.add(new Daños(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5)));
             }
 
         } catch (SQLException ex) {
@@ -83,27 +84,33 @@ public class Daños extends RecursiveTreeObject<Daños> {
 
         final TreeItem<Daños> root = new RecursiveTreeItem<Daños>(daños, RecursiveTreeObject::getChildren);
 
-        treeView.getColumns().setAll(lugar,sintoma,causa);
-
+        treeView.getColumns().setAll(lugar, sintoma, causa);
+        treeView.setEditable(true);
+        lugar.setCellFactory(TextFieldTreeTableCell.forTreeTableColumn());
+        sintoma.setCellFactory(TextFieldTreeTableCell.forTreeTableColumn());
+        causa.setCellFactory(TextFieldTreeTableCell.forTreeTableColumn());
         treeView.setRoot(root);
         treeView.setShowRoot(false);
 
     }
-    public static void eliminarConTecla(JFXTreeTableView treeView,Connection connection){
+
+    public static void eliminarConTecla(JFXTreeTableView treeView, Connection connection) {
         int row = treeView.getSelectionModel().getSelectedIndex();
         try {
             com.mysql.jdbc.PreparedStatement ps = (PreparedStatement) connection.prepareStatement("SELECT * FROM daños");
             ResultSet rs = ps.executeQuery();
             int aux = 0;
-            while (rs.next()){
-                if ( aux == row){
+            while (rs.next()) {
+                if (aux == row) {
                     try {
                         Connection con = (Connection) DBConnection.getConnection();
                         PreparedStatement preparedStatement = (PreparedStatement) con.prepareStatement("DELETE FROM daños WHERE ID_dam=?");
                         preparedStatement.setString(1, rs.getString(1));
                         preparedStatement.executeUpdate();
-                        llenarTabla(treeView,connection);
-                    }catch (SQLException e){e.printStackTrace();}
+                        llenarTabla(treeView, connection);
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
                 }
                 aux++;
             }
@@ -111,14 +118,15 @@ public class Daños extends RecursiveTreeObject<Daños> {
 
         }
     }
-    public static void buscarDaño(JFXTextField textField, JFXTreeTableView treeView){
+
+    public static void buscarDaño(JFXTextField textField, JFXTreeTableView treeView) {
         textField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 treeView.setPredicate(new Predicate<TreeItem<Daños>>() {
                     @Override
                     public boolean test(TreeItem<Daños> treeItem) {
-                        boolean flag= treeItem.getValue().cuadro.getValue().contains(newValue);
+                        boolean flag = treeItem.getValue().cuadro.getValue().contains(newValue);
                         return flag;
                     }
                 });

@@ -4,6 +4,9 @@ import Botones.Ventanas;
 import DB.DBConnection;
 import Tablas.*;
 import Tablas.Cuadro.Arbol;
+import Tablas.Cuadro.Daños;
+import Tablas.Cuadro.Historial;
+import Tablas.Cuadro.Terreno;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXTreeTableView;
@@ -40,6 +43,7 @@ public class VistaCuadro implements Initializable {
         Vista.llenarComboCuadros(cuadro,connection);
 
 
+
     }
 
     @FXML
@@ -53,9 +57,28 @@ public class VistaCuadro implements Initializable {
         }
     }
     @FXML
-    void keyDelete(KeyEvent event){
+    void deleteArbol(KeyEvent event){
         if (event.getCode().equals(KeyCode.DELETE)){
             Arbol.eliminarConTecla(tablaArbol,connection);
         }
     }
+    @FXML
+    void deleteTerreno(KeyEvent event){
+        if (event.getCode().equals(KeyCode.DELETE)){
+            Terreno.eliminarConTecla(cuadroTerreno,connection);
+        }
+    }
+    @FXML
+    void deleteHistorial(KeyEvent event){
+        if (event.getCode().equals(KeyCode.DELETE)){
+            Historial.eliminarConTecla(cuadroHistorial,connection);
+        }
+    }
+    @FXML
+    void deleteDaños(KeyEvent event){
+        if (event.getCode().equals(KeyCode.DELETE)){
+            Daños.eliminarConTecla(cuadroDaño,connection);
+        }
+    }
+
 }

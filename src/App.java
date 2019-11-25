@@ -9,11 +9,11 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        Parent root = FXMLLoader.   load(getClass().getResource("/Vistas/Dashboard.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/Vistas/Dashboard.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
-        primaryStage.setTitle("Manage Software");
+        primaryStage.setTitle("Manage Software 0.1 (Alpha)");
         primaryStage.getIcons().add(new Image("Images/icono.png"));
         primaryStage.show();
     }

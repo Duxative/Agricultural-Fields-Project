@@ -5,12 +5,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#abrirVentaAccion" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Dashboard">
+<StackPane fx:id="stackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#abrirVentaAccion" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Dashboard">
 
    <children>
-      <AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: WHITE;">
+      <AnchorPane fx:id="anchorPane" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: WHITE;">
          <children>
             <ImageView fitHeight="68.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -55,6 +56,15 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
+                  <JFXToggleButton fx:id="atajos" layoutX="27.0" layoutY="686.0" mnemonicParsing="false" text="Mostrar atajos" toggleColor="#28c76f" toggleLineColor="#28c76c" />
+                  <Pane fx:id="shortcuts" layoutX="10.0" layoutY="475.0" prefHeight="200.0" prefWidth="180.0" visible="false">
+                     <children>
+                        <Label layoutX="10.0" layoutY="15.0" prefHeight="17.0" prefWidth="160.0" text="F2: Ventana agregar accion" />
+                        <Label layoutX="10.0" layoutY="35.0" prefHeight="17.0" prefWidth="160.0" text="F3: Ventana agregar viaje" />
+                        <Label layoutX="10.0" layoutY="75.0" prefHeight="17.0" prefWidth="160.0" text="F5: Actualizar ventana actual" />
+                        <Label layoutX="10.0" layoutY="55.0" prefHeight="17.0" prefWidth="160.0" text="F4: Cambiar porcentajes nuez" />
+                     </children>
+                  </Pane>
                </children></Pane>
             <ScrollPane layoutX="201.0" layoutY="68.0" prefHeight="700.0" prefWidth="1163.0" stylesheets="@../CSS/Dashboard.css">
                <content>
@@ -80,7 +90,15 @@
                            </children></Pane>
                         <Pane layoutX="794.0" layoutY="25.0" prefHeight="200.0" prefWidth="322.0" styleClass="fondo">
                            <children>
-                              <PieChart prefHeight="200.0" prefWidth="230.0" />
+                              <BarChart fx:id="barChart" layoutY="25.0" prefHeight="175.0" prefWidth="322.0">
+                                <xAxis>
+                                  <CategoryAxis side="BOTTOM" fx:id="x" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis fx:id="y" side="LEFT" />
+                                </yAxis>
+                              </BarChart>
+                              <JFXComboBox fx:id="variedad" labelFloat="true" layoutY="2.0" prefHeight="25.0" prefWidth="322.0" promptText="Variedad de cultivo" />
                            </children></Pane>
                         <Pane layoutX="50.0" layoutY="250.0" prefHeight="400.0" prefWidth="1066.0" styleClass="fondo">
                            <children>
@@ -89,15 +107,22 @@
                                     <Image url="@../Images/Mapa.jpg" />
                                  </image>
                               </ImageView>
-                              <Text layoutX="486.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mapa de Nochistongo">
+                              <Pane prefHeight="25.0" prefWidth="1066.0" style="-fx-background-color: #28C76F;" />
+                              <Text fill="WHITE" layoutX="486.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mapa de Nochistongo">
                                  <font>
-                                    <Font size="18.0" />
+                                    <Font name="System Bold" size="18.0" />
                                  </font>
                               </Text>
                               <JFXButton fx:id="SieteB" layoutX="841.0" layoutY="303.0" mnemonicParsing="false" onMouseClicked="#abrirCuadro" prefHeight="25.0" prefWidth="158.0" text="7B" />
                               <JFXButton fx:id="Ochoa" layoutX="771.0" layoutY="273.0" mnemonicParsing="false" onMouseClicked="#abrirCuadro" prefHeight="25.0" prefWidth="66.0" text="8A" />
                               <JFXButton fx:id="Ochob" layoutX="778.0" layoutY="303.0" mnemonicParsing="false" onMouseClicked="#abrirCuadro" prefHeight="25.0" prefWidth="54.0" text="8B" />
-                              <JFXButton fx:id="SieteA" layoutX="841.0" layoutY="273.0" mnemonicParsing="false" onMouseClicked="#abrirCuadro" prefHeight="25.0" prefWidth="161.0" text="7A" />
+                              <JFXButton fx:id="SieteA" layoutX="852.0" layoutY="273.0" mnemonicParsing="false" onMouseClicked="#abrirCuadro" prefHeight="25.0" prefWidth="150.0" text="7A" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="20.0" layoutX="14.0" layoutY="44.0" stroke="BLACK" strokeType="INSIDE" width="20.0" />
+                              <Text layoutX="41.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mal estado" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcff00" height="20.0" layoutX="14.0" layoutY="75.0" stroke="BLACK" strokeType="INSIDE" width="20.0" />
+                              <Text layoutX="41.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="En riesgo" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#28c76f" height="20.0" layoutX="14.0" layoutY="107.0" stroke="BLACK" strokeType="INSIDE" width="20.0" />
+                              <Text layoutX="41.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buen estado" />
                            </children>
                         </Pane>
                      </children></AnchorPane>
@@ -109,11 +134,6 @@
             <Text layoutX="345.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temperatura: 30 C" />
             <Text layoutX="635.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Humedad: Baja" />
             <Text layoutX="454.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Corrientes de aire: sin corrientes" />
-            <Text layoutX="213.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Atajos: F2 agregar Accion, F3 Agregar viaje, F5 Actualizar">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Text>
          </children>
       </AnchorPane>
    </children>

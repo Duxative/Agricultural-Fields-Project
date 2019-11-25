@@ -14,8 +14,11 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
+import javafx.scene.control.cell.ComboBoxTreeTableCell;
+import javafx.scene.control.cell.TextFieldTreeTableCell;
 import javafx.util.Callback;
 
 import java.sql.ResultSet;
@@ -25,18 +28,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Terreno extends RecursiveTreeObject<Terreno> {
-    StringProperty fertilidad, estadoActual,tipoRiego,fecha,cuadro;
+    StringProperty fertilidad, estadoActual, tipoRiego, fecha, cuadro;
 
     public Terreno(String fertilidad, String estadoActual, String tipoRiego, String fecha, String cuadro) {
         this.fertilidad = new SimpleStringProperty(fertilidad);
         this.estadoActual = new SimpleStringProperty(estadoActual);
-        this.tipoRiego = new SimpleStringProperty(tipoRiego) ;
+        this.tipoRiego = new SimpleStringProperty(tipoRiego);
         this.fecha = new SimpleStringProperty(fecha);
         this.cuadro = new SimpleStringProperty(cuadro);
     }
 
-    public static void llenarTabla(JFXTreeTableView treeView, Connection connection){
-        JFXTreeTableColumn<Terreno, String> parametro= new JFXTreeTableColumn<>("Fertilidad");
+    public static void llenarTabla(JFXTreeTableView treeView, Connection connection) {
+        JFXTreeTableColumn<Terreno, String> parametro = new JFXTreeTableColumn<>("Fertilidad");
         parametro.setPrefWidth(100);
         parametro.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<Terreno, String>, ObservableValue<String>>() {
             @Override
@@ -44,7 +47,7 @@ public class Terreno extends RecursiveTreeObject<Terreno> {
                 return param.getValue().getValue().fertilidad;
             }
         });
-        JFXTreeTableColumn<Terreno, String> parametro2= new JFXTreeTableColumn<>("Estado actual");
+        JFXTreeTableColumn<Terreno, String> parametro2 = new JFXTreeTableColumn<>("Estado actual");
         parametro2.setPrefWidth(100);
         parametro2.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<Terreno, String>, ObservableValue<String>>() {
             @Override
@@ -52,7 +55,7 @@ public class Terreno extends RecursiveTreeObject<Terreno> {
                 return param.getValue().getValue().estadoActual;
             }
         });
-        JFXTreeTableColumn<Terreno, String> parametro3= new JFXTreeTableColumn<>("Tipo de riego");
+        JFXTreeTableColumn<Terreno, String> parametro3 = new JFXTreeTableColumn<>("Tipo de riego");
         parametro3.setPrefWidth(100);
         parametro3.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<Terreno, String>, ObservableValue<String>>() {
             @Override
@@ -60,7 +63,7 @@ public class Terreno extends RecursiveTreeObject<Terreno> {
                 return param.getValue().getValue().tipoRiego;
             }
         });
-        JFXTreeTableColumn<Terreno, String> parametro4= new JFXTreeTableColumn<>("Fecha");
+        JFXTreeTableColumn<Terreno, String> parametro4 = new JFXTreeTableColumn<>("Fecha");
         parametro4.setPrefWidth(100);
         parametro4.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<Terreno, String>, ObservableValue<String>>() {
             @Override
@@ -68,7 +71,7 @@ public class Terreno extends RecursiveTreeObject<Terreno> {
                 return param.getValue().getValue().fecha;
             }
         });
-        JFXTreeTableColumn<Terreno, String> cuadro= new JFXTreeTableColumn<>("Cuadro");
+        JFXTreeTableColumn<Terreno, String> cuadro = new JFXTreeTableColumn<>("Cuadro");
         cuadro.setPrefWidth(100);
         cuadro.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<Terreno, String>, ObservableValue<String>>() {
             @Override
@@ -82,7 +85,7 @@ public class Terreno extends RecursiveTreeObject<Terreno> {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                terrenos.add(new Terreno(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6)));
+                terrenos.add(new Terreno(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6)));
             }
 
         } catch (SQLException ex) {
@@ -92,27 +95,40 @@ public class Terreno extends RecursiveTreeObject<Terreno> {
 
         final TreeItem<Terreno> root = new RecursiveTreeItem<Terreno>(terrenos, RecursiveTreeObject::getChildren);
 
-        treeView.getColumns().setAll(parametro,parametro2,parametro3,parametro4,cuadro);
-
+        treeView.getColumns().setAll(parametro, parametro2, parametro3, parametro4, cuadro);
+        treeView.setEditable(true);
+        ObservableList<String> fertilidad = FXCollections.observableArrayList("Alta","Media","Baja");
+        ObservableList<String> estado = FXCollections.observableArrayList("Bueno","Malo","En pausa");
+        ObservableList<String> tipoRiego = FXCollections.observableArrayList("Goteo","Rodado");
+        ObservableList<String> cuadros = FXCollections.observableArrayList("7A","7B","8A","8B");
+        parametro.setCellFactory(ComboBoxTreeTableCell.forTreeTableColumn(fertilidad));
+        parametro2.setCellFactory(ComboBoxTreeTableCell.forTreeTableColumn(estado));
+        parametro3.setCellFactory(ComboBoxTreeTableCell.forTreeTableColumn(tipoRiego));
+        parametro4.setCellFactory(TextFieldTreeTableCell.forTreeTableColumn());
+        cuadro.setCellFactory(ComboBoxTreeTableCell.forTreeTableColumn(cuadros));
+        //fertilidad, estadoActual, tipoRiego, fecha, cuadro
         treeView.setRoot(root);
         treeView.setShowRoot(false);
 
     }
-    public static void eliminarConTecla(JFXTreeTableView treeView,Connection connection){
+
+    public static void eliminarConTecla(JFXTreeTableView treeView, Connection connection) {
         int row = treeView.getSelectionModel().getSelectedIndex();
         try {
             com.mysql.jdbc.PreparedStatement ps = (PreparedStatement) connection.prepareStatement("SELECT * FROM terreno");
             ResultSet rs = ps.executeQuery();
             int aux = 0;
-            while (rs.next()){
-                if ( aux == row){
+            while (rs.next()) {
+                if (aux == row) {
                     try {
                         Connection con = (Connection) DBConnection.getConnection();
                         PreparedStatement preparedStatement = (PreparedStatement) con.prepareStatement("DELETE FROM terreno WHERE ID_terreno=?");
                         preparedStatement.setString(1, rs.getString(1));
                         preparedStatement.executeUpdate();
-                        llenarTabla(treeView,connection);
-                    }catch (SQLException e){e.printStackTrace();}
+                        llenarTabla(treeView, connection);
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
                 }
                 aux++;
             }
@@ -120,14 +136,15 @@ public class Terreno extends RecursiveTreeObject<Terreno> {
 
         }
     }
-    public static void buscarDaño(JFXTextField textField, JFXTreeTableView treeView){
+
+    public static void buscarDaño(JFXTextField textField, JFXTreeTableView treeView) {
         textField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 treeView.setPredicate(new Predicate<TreeItem<Terreno>>() {
                     @Override
                     public boolean test(TreeItem<Terreno> treeItem) {
-                        boolean flag= treeItem.getValue().cuadro.getValue().contains(newValue);
+                        boolean flag = treeItem.getValue().cuadro.getValue().contains(newValue);
                         return flag;
                     }
                 });

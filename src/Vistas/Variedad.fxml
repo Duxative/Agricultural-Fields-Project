@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane fx:id="stackPane" prefHeight="310.0" prefWidth="180.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Variedad">
+          <AnchorPane prefHeight="310.0" prefWidth="180.0" style="-fx-background-color: WHITE;" stylesheets="@../CSS/Recetas.css">
+          <children>
+         <Pane prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: #28C76F;">
+            <children>
+               <Text fill="WHITE" layoutX="23.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Porcentajes de variedad">
+                  <font>
+                     <Font name="System Bold" size="12.0" />
+                  </font></Text>
+            </children></Pane>
+          <JFXButton layoutX="98.0" layoutY="271.0" mnemonicParsing="false" onMouseClicked="#agregar" text="Actualizar" />
+         <JFXTextField fx:id="primera" layoutX="15.0" layoutY="75.0" prefWidth="150.0" promptText="De primera" />
+         <JFXTextField fx:id="quebrada" layoutX="15.0" layoutY="105.0" prefWidth="150.0" promptText="Querada" />
+         <JFXTextField fx:id="germinada" layoutX="15.0" layoutY="135.0" prefWidth="150.0" promptText="Germinada" />
+         <JFXTextField fx:id="vana" layoutX="15.0" layoutY="165.0" prefWidth="150.0" promptText="Vana" />
+         <JFXTextField fx:id="ruez" layoutX="15.0" layoutY="195.0" prefWidth="150.0" promptText="Con ruez" />
+         <JFXTextField fx:id="aceitosa" layoutX="15.0" layoutY="225.0" prefWidth="150.0" promptText="Aceitosa" />
+         <JFXComboBox fx:id="variedad" labelFloat="true" layoutX="15.0" layoutY="38.0" prefWidth="150.0" promptText="Variedad" />
+          </children>
+          </AnchorPane>
+       </StackPane>

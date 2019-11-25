@@ -6,10 +6,10 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#abrirVentaAccion" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Enfermedades">
+<StackPane fx:id="stackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#abrirVentaAccion" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Enfermedades">
 
    <children>
-      <AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: WHITE;">
+      <AnchorPane fx:id="anchorPane" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: WHITE;">
          <children>
             <ImageView fitHeight="68.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -23,24 +23,18 @@
                         <JFXButton layoutY="160.0" mnemonicParsing="false" onMouseClicked="#agregarReceta1" prefHeight="40.0" prefWidth="322.0" text="Agregar" />
                         <ImageView fitHeight="159.0" fitWidth="322.0" pickOnBounds="true" preserveRatio="true" />
                         <Text fx:id="text1" layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enfermedad:Pulgon blanco" />
-                        <Text layoutX="10.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Causa:" />
-                        <JFXTextField fx:id="c1" layoutX="52.0" layoutY="38.0" prefHeight="30.0" prefWidth="69.0" />
-                        <Text layoutX="10.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lugar:" />
-                        <JFXTextField fx:id="s1" layoutX="55.0" layoutY="65.0" prefHeight="30.0" prefWidth="86.0" />
-                        <Text layoutX="176.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuadro:" />
-                        <JFXComboBox fx:id="cb1" layoutX="232.0" layoutY="40.0" prefHeight="30.0" prefWidth="60.0" />
+                        <JFXTextField fx:id="c1" labelFloat="true" layoutX="25.0" layoutY="38.0" prefHeight="30.0" prefWidth="281.0" promptText="Causa" />
+                        <JFXTextField fx:id="s1" labelFloat="true" layoutX="25.0" layoutY="120.0" prefHeight="30.0" prefWidth="281.0" promptText="Lugar" />
+                        <JFXComboBox fx:id="cb1" labelFloat="true" layoutX="25.0" layoutY="80.0" prefHeight="30.0" prefWidth="281.0" promptText="Cuadro" />
                      </children></Pane>
                   <Pane layoutX="422.0" layoutY="50.0" prefHeight="200.0" prefWidth="322.0" styleClass="fondoBlanco">
                      <children>
                         <JFXButton layoutY="160.0" mnemonicParsing="false" onMouseClicked="#agregarReceta2" prefHeight="40.0" prefWidth="322.0" text="Agregar" />
                         <ImageView fitHeight="159.0" fitWidth="322.0" pickOnBounds="true" preserveRatio="true" />
                         <Text fx:id="text2" layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enfermedad:Pulgon amarillo" />
-                        <Text layoutX="20.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Causa:" />
-                        <JFXTextField fx:id="c2" layoutX="62.0" layoutY="31.0" prefHeight="30.0" prefWidth="69.0" />
-                        <Text layoutX="20.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lugar:" />
-                        <JFXTextField fx:id="s2" layoutX="65.0" layoutY="58.0" prefHeight="30.0" prefWidth="86.0" />
-                        <Text layoutX="186.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuadro:" />
-                        <JFXComboBox fx:id="cb2" layoutX="242.0" layoutY="33.0" prefHeight="30.0" prefWidth="60.0" />
+                        <JFXTextField fx:id="c2" labelFloat="true" layoutX="25.0" layoutY="31.0" prefHeight="30.0" prefWidth="275.0" promptText="Causa" />
+                        <JFXTextField fx:id="s2" labelFloat="true" layoutX="25.0" layoutY="120.0" prefHeight="30.0" prefWidth="275.0" promptText="Lugar" />
+                        <JFXComboBox fx:id="cb2" labelFloat="true" layoutX="25.0" layoutY="80.0" prefHeight="30.0" prefWidth="275.0" promptText="Cuadro" />
                      </children>
                   </Pane>
                   <Pane layoutX="794.0" layoutY="50.0" prefHeight="200.0" prefWidth="322.0" styleClass="fondoBlanco">
@@ -48,12 +42,9 @@
                         <JFXButton layoutY="160.0" mnemonicParsing="false" onMouseClicked="#agregarReceta3" prefHeight="40.0" prefWidth="322.0" text="Agregar" />
                         <ImageView fitHeight="159.0" fitWidth="322.0" pickOnBounds="true" preserveRatio="true" />
                         <Text fx:id="text3" layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enfermedad:Pulgon negro" />
-                        <Text layoutX="12.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Causa:" />
-                        <JFXTextField fx:id="c3" layoutX="54.0" layoutY="32.0" prefHeight="30.0" prefWidth="69.0" />
-                        <Text layoutX="12.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lugar:" />
-                        <JFXTextField fx:id="s3" layoutX="65.0" layoutY="59.0" prefHeight="30.0" prefWidth="86.0" />
-                        <Text layoutX="178.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuadro:" />
-                        <JFXComboBox fx:id="cb3" layoutX="234.0" layoutY="34.0" prefHeight="30.0" prefWidth="60.0" />
+                        <JFXTextField fx:id="c3" labelFloat="true" layoutX="25.0" layoutY="32.0" prefHeight="30.0" prefWidth="275.0" promptText="Causa" />
+                        <JFXTextField fx:id="s3" labelFloat="true" layoutX="25.0" layoutY="120.0" prefHeight="30.0" prefWidth="275.0" promptText="Lugar" />
+                        <JFXComboBox fx:id="cb3" labelFloat="true" layoutX="25.0" layoutY="80.0" prefHeight="30.0" prefWidth="275.0" promptText="Cuadro" />
                      </children>
                   </Pane>
                   <Pane layoutX="794.0" layoutY="300.0" prefHeight="200.0" prefWidth="322.0" styleClass="fondoBlanco">
@@ -61,12 +52,9 @@
                         <JFXButton layoutY="160.0" mnemonicParsing="false" onMouseClicked="#agregarReceta6" prefHeight="40.0" prefWidth="322.0" text="Agregar" />
                         <ImageView fitHeight="159.0" fitWidth="322.0" pickOnBounds="true" preserveRatio="true" />
                         <Text fx:id="text6" layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enfermedad:  Antracnosis" />
-                        <Text layoutX="14.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Causa:" />
-                        <JFXTextField fx:id="c6" layoutX="56.0" layoutY="31.0" prefHeight="30.0" prefWidth="69.0" />
-                        <Text layoutX="14.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lugar:" />
-                        <JFXTextField fx:id="c1111s611" layoutX="55.0" layoutY="58.0" prefHeight="30.0" prefWidth="86.0" />
-                        <Text layoutX="180.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuadro:" />
-                        <JFXComboBox fx:id="cb6" layoutX="236.0" layoutY="33.0" prefHeight="30.0" prefWidth="60.0" />
+                        <JFXTextField fx:id="c6" labelFloat="true" layoutX="25.0" layoutY="31.0" prefHeight="30.0" prefWidth="275.0" promptText="Causa" />
+                        <JFXTextField fx:id="c1111s611" labelFloat="true" layoutX="25.0" layoutY="120.0" prefHeight="30.0" prefWidth="275.0" promptText="Lugar" />
+                        <JFXComboBox fx:id="cb6" labelFloat="true" layoutX="25.0" layoutY="80.0" prefHeight="30.0" prefWidth="275.0" promptText="Cuadro" />
                      </children>
                   </Pane>
                   <Pane layoutX="422.0" layoutY="300.0" prefHeight="200.0" prefWidth="322.0" styleClass="fondoBlanco">
@@ -74,12 +62,9 @@
                         <JFXButton layoutY="160.0" mnemonicParsing="false" onMouseClicked="#agregarReceta5" prefHeight="40.0" prefWidth="322.0" text="Agregar" />
                         <ImageView fitHeight="159.0" fitWidth="322.0" pickOnBounds="true" preserveRatio="true" />
                         <Text fx:id="text5" layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enfermedad: Carpocapsa" />
-                        <Text layoutX="8.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Causa:" />
-                        <JFXTextField fx:id="c5" layoutX="50.0" layoutY="30.0" prefHeight="30.0" prefWidth="69.0" />
-                        <Text layoutX="8.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lugar:" />
-                        <JFXTextField fx:id="s5" layoutX="55.0" layoutY="57.0" prefHeight="30.0" prefWidth="86.0" />
-                        <Text layoutX="174.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuadro:" />
-                        <JFXComboBox fx:id="cb5" layoutX="230.0" layoutY="32.0" prefHeight="30.0" prefWidth="60.0" />
+                        <JFXTextField fx:id="c5" labelFloat="true" layoutX="25.0" layoutY="30.0" prefHeight="30.0" prefWidth="275.0" promptText="Causa" />
+                        <JFXTextField fx:id="s5" labelFloat="true" layoutX="25.0" layoutY="120.0" prefHeight="30.0" prefWidth="275.0" promptText="Lugar" />
+                        <JFXComboBox fx:id="cb5" labelFloat="true" layoutX="25.0" layoutY="80.0" prefHeight="30.0" prefWidth="275.0" promptText="Cuadro" />
                      </children>
                   </Pane>
                   <Pane layoutX="50.0" layoutY="300.0" prefHeight="200.0" prefWidth="322.0" styleClass="fondoBlanco">
@@ -87,18 +72,15 @@
                         <JFXButton layoutY="160.0" mnemonicParsing="false" onMouseClicked="#agregarReceta4" prefHeight="40.0" prefWidth="322.0" text="Agregar" />
                         <ImageView fitHeight="159.0" fitWidth="322.0" pickOnBounds="true" preserveRatio="true" />
                         <Text fx:id="text4" layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Plaga:Topos" />
-                        <Text layoutX="20.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Causa:" />
-                        <JFXTextField fx:id="c4" layoutX="62.0" layoutY="31.0" prefHeight="30.0" prefWidth="69.0" />
-                        <Text layoutX="20.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lugar:" />
-                        <JFXTextField fx:id="s4" layoutX="65.0" layoutY="58.0" prefHeight="30.0" prefWidth="86.0" />
-                        <Text layoutX="186.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuadro:" />
-                        <JFXComboBox fx:id="cb4" layoutX="242.0" layoutY="33.0" prefHeight="30.0" prefWidth="60.0" />
+                        <JFXTextField fx:id="c4" labelFloat="true" layoutX="25.0" layoutY="31.0" prefHeight="30.0" prefWidth="275.0" promptText="Causa" />
+                        <JFXTextField fx:id="s4" labelFloat="true" layoutX="25.0" layoutY="120.0" prefHeight="30.0" prefWidth="275.0" promptText="Lugar" />
+                        <JFXComboBox fx:id="cb4" labelFloat="true" layoutX="25.0" layoutY="80.0" prefHeight="30.0" prefWidth="275.0" promptText="Cuadro" />
                      </children>
                   </Pane>
                </children></Pane>
             <Pane prefHeight="768.0" prefWidth="200.0" stylesheets="@../CSS/buttons.css">
                 <children>
-                    <JFXButton layoutX="25.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#btnDash" prefHeight="40.0" prefWidth="150.0" text="Dashboard">
+                    <JFXButton fx:id="dashboard" layoutX="25.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#btnDash" prefHeight="40.0" prefWidth="150.0" text="Dashboard">
                         <graphic>
                             <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-23.0">
                                 <image>
@@ -116,7 +98,7 @@
                             </ImageView>
                         </graphic>
                     </JFXButton>
-                    <JFXButton layoutX="25.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#btnRecetas" prefHeight="40.0" prefWidth="150.0" text="Recetas">
+                    <JFXButton fx:id="recetas" layoutX="25.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#btnRecetas" prefHeight="40.0" prefWidth="150.0" text="Recetas">
                         <graphic>
                             <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-30.0">
                                 <image>

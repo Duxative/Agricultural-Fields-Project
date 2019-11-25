@@ -7,7 +7,7 @@
 <StackPane fx:id="stackPane" prefHeight="250.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.AddAction">
           <AnchorPane prefHeight="250.0" prefWidth="310.0" style="-fx-background-color: WHITE;" stylesheets="@../CSS/Recetas.css">
           <children>
-          <JFXTextField fx:id="accion" labelFloat="true" layoutX="25.0" layoutY="51.0" prefWidth="120.0" promptText="Accion" />
+          <JFXTextField fx:id="accion" accessibleRole="CHECK_BOX" labelFloat="true" layoutX="25.0" layoutY="51.0" prefWidth="120.0" promptText="Accion" />
           <JFXDatePicker fx:id="fecha" layoutX="160.0" layoutY="48.0" prefWidth="120.0" promptText="Fecha" />
           <JFXComboBox fx:id="cuadro" labelFloat="true" layoutX="25.0" layoutY="206.0" prefWidth="120.0" promptText="Cuadro" />
           <JFXTextField fx:id="descripcion" labelFloat="true" layoutX="25.0" layoutY="153.0" prefWidth="120.0" promptText="Descripcion" />

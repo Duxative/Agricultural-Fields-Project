@@ -14,7 +14,7 @@
             <JFXTextField fx:id="arbol" layoutX="190.0" />
             <Pane prefHeight="30.0" prefWidth="900.0" style="-fx-background-color: #28C76F;">
                <children>
-                  <Text fx:id="titulo" fill="WHITE" layoutX="360.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre del cuadro y el cultivo">
+                  <Text fx:id="titulo" fill="WHITE" layoutX="418.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuadro ??">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -26,7 +26,7 @@
                      <children>
                         <Text fill="WHITE" layoutX="237.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arbol" />
                      </children></Pane>
-                  <JFXTreeTableView fx:id="tablaArbol" layoutY="20.0" onKeyPressed="#keyDelete" prefHeight="120.0" prefWidth="506.0" />
+                  <JFXTreeTableView fx:id="tablaArbol" layoutY="20.0" prefHeight="120.0" prefWidth="506.0" />
                </children></Pane>
             <Pane layoutX="25.0" layoutY="251.0" prefHeight="130.0" prefWidth="506.0" style="-fx-background-color: WHITE;">
                <children>
@@ -39,7 +39,7 @@
                </children></Pane>
             <Pane layoutX="563.0" layoutY="85.0" prefHeight="296.0" prefWidth="310.0" style="-fx-background-color: WHITE;">
                <children>
-                  <JFXTreeTableView fx:id="cuadroDaño" layoutY="20.0" prefHeight="278.0" prefWidth="310.0" />
+                  <JFXTreeTableView fx:id="cuadroDaño" layoutY="20.0" onKeyPressed="#deleteDaños" prefHeight="278.0" prefWidth="310.0" />
                   <Pane prefHeight="20.0" prefWidth="310.0" styleClass="top">
                      <children>
                         <Text fill="WHITE" layoutX="137.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Daños" />
@@ -51,9 +51,9 @@
                   <Text fill="WHITE" layoutX="367.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="top" text="Historial de acciones" />
                </children>
             </Pane>
-            <JFXTreeTableView fx:id="cuadroHistorial" layoutX="25.0" layoutY="416.0" prefHeight="127.0" prefWidth="850.0" />
+            <JFXTreeTableView fx:id="cuadroHistorial" layoutX="25.0" layoutY="416.0" onKeyPressed="#deleteHistorial" prefHeight="127.0" prefWidth="850.0" />
             <JFXButton layoutX="795.0" layoutY="550.0" mnemonicParsing="false" onMouseClicked="#actualizar" prefHeight="30.0" prefWidth="80.0" text="Actualizar" />
-            <JFXComboBox fx:id="cuadro" labelFloat="true" layoutX="563.0" layoutY="40.0" prefHeight="25.0" prefWidth="310.0" promptText="Cuadro" />
+            <JFXComboBox fx:id="cuadro" labelFloat="true" layoutX="563.0" layoutY="40.0" prefHeight="25.0" prefWidth="310.0" promptText="Cuadro" visible="false" />
             <JFXComboBox fx:id="mes" layoutX="317.0" layoutY="40.0" prefHeight="25.0" prefWidth="266.0" promptText="Mes" visible="false" />
             <JFXComboBox fx:id="año" layoutX="25.0" layoutY="40.0" prefHeight="25.0" prefWidth="266.0" promptText="Año" visible="false" />
             <JFXButton layoutX="25.0" layoutY="553.0" mnemonicParsing="false" text="Nueva temporada" visible="false" />

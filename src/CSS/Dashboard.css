@@ -1,3 +1,10 @@
 .tree-table-cell {
     -fx-alignment: center ;
 }
+.chart-bar {
+    -fx-bar-fill: #28C76F;
+}
+.jfx-combo-box {
+       -jfx-focus-color: #28C76F;
+       -fx-text-: center;
+       }

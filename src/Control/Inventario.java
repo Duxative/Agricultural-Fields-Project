@@ -32,6 +32,7 @@ public class Inventario implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         Vista.iniciarInventario(comboCat,comboCat2,comboAdd,comboRemove,inventoryTable,searchField,connection);
 
+
     }
 
     @FXML

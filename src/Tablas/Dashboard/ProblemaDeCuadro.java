@@ -1,6 +1,7 @@
 package Tablas.Dashboard;
 
 import DB.DBConnection;
+import Tablas.Cuadro.Daños;
 import Tablas.Cuadro.Historial;
 import Tablas.Cuadro.Terreno;
 import com.jfoenix.controls.JFXTextField;
@@ -104,6 +105,42 @@ public class ProblemaDeCuadro extends RecursiveTreeObject<ProblemaDeCuadro> {
             }
         } catch (SQLException ex) {
 
+        }
+    }
+    public static int contarProblemas7A(Connection connection) throws SQLException {
+        com.mysql.jdbc.PreparedStatement ps = (PreparedStatement) connection.prepareStatement("SELECT COUNT(*) FROM problema_en_cuadros WHERE cuadro = \"7A\"");
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()){
+            return rs.getInt(1);
+        }else {
+            return 0;
+        }
+    }
+    public static int contarProblemas7B(Connection connection) throws SQLException {
+        com.mysql.jdbc.PreparedStatement ps = (PreparedStatement) connection.prepareStatement("SELECT COUNT(*) FROM problema_en_cuadros WHERE cuadro = \"7B\"");
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()){
+            return rs.getInt(1);
+        }else {
+            return 0;
+        }
+    }
+    public static int contarProblemas8A(Connection connection) throws SQLException {
+        com.mysql.jdbc.PreparedStatement ps = (PreparedStatement) connection.prepareStatement("SELECT COUNT(*) FROM problema_en_cuadros WHERE cuadro = \"8A\"");
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()){
+            return rs.getInt(1);
+        }else {
+            return 0;
+        }
+    }
+    public static int contarProblemas8B(Connection connection) throws SQLException {
+        com.mysql.jdbc.PreparedStatement ps = (PreparedStatement) connection.prepareStatement("SELECT COUNT(*) FROM problema_en_cuadros WHERE cuadro = \"8B\"");
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()){
+            return rs.getInt(1);
+        }else {
+            return 0;
         }
     }
 }

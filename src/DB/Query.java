@@ -161,7 +161,7 @@ public class Query {
                             preparedStatement.setString(2, comboProducto.getSelectionModel().getSelectedItem().toString());
 
                             preparedStatement.executeUpdate();
-                            Inventario.llenarTabla(treeTableView,connection);
+                            Inventario.llenarTabla(treeTableView, connection);
                             textField.clear();
                         }
 
@@ -174,6 +174,7 @@ public class Query {
             ex.printStackTrace();
         }
     }
+
     public static void updateSumar(StackPane stackPane, Connection connection, JFXComboBox comboProducto, JFXTextField textField, JFXTreeTableView treeTableView) {
         try {
             com.mysql.jdbc.PreparedStatement ps = (PreparedStatement) connection.prepareStatement("SELECT * FROM inventario");
@@ -194,7 +195,7 @@ public class Query {
                             preparedStatement.setString(2, comboProducto.getSelectionModel().getSelectedItem().toString());
 
                             preparedStatement.executeUpdate();
-                            Inventario.llenarTabla(treeTableView,connection);
+                            Inventario.llenarTabla(treeTableView, connection);
                             textField.clear();
                         }
 
@@ -208,5 +209,5 @@ public class Query {
         }
     }
 
-}
 
+}

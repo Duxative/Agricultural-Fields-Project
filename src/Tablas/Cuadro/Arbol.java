@@ -18,8 +18,10 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
+import javafx.scene.control.cell.ComboBoxTreeTableCell;
 import javafx.scene.control.cell.TextFieldTreeTableCell;
 import javafx.util.Callback;
 
@@ -34,11 +36,11 @@ public class Arbol extends RecursiveTreeObject<Arbol> {
     StringProperty edad, estado_actual, plaga_o_enfermedad, cultivo, cuadro;
     IntegerProperty cantidad_de_arboles;
 
-    public Arbol(){
+    public Arbol() {
         super();
     }
 
-    public Arbol(String edad, String estado_actual, String plaga_o_enfermedad,int cantidad_de_arboles, String cultivo, String cuadro){
+    public Arbol(String edad, String estado_actual, String plaga_o_enfermedad, int cantidad_de_arboles, String cultivo, String cuadro) {
         this.edad = new SimpleStringProperty(edad);
         this.estado_actual = new SimpleStringProperty(estado_actual);
         this.plaga_o_enfermedad = new SimpleStringProperty(plaga_o_enfermedad);
@@ -94,13 +96,16 @@ public class Arbol extends RecursiveTreeObject<Arbol> {
             }
         });
 
+
+
+
         ObservableList<Arbol> arboles = FXCollections.observableArrayList();
         try {
             com.mysql.jdbc.PreparedStatement ps = (PreparedStatement) connection.prepareStatement("SELECT * FROM arbol");
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                arboles.add(new Arbol(rs.getString(2),rs.getString(3),rs.getString(4),rs.getInt(5),rs.getString(6),rs.getString(7)));
+                arboles.add(new Arbol(rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5), rs.getString(6), rs.getString(7)));
             }
 
         } catch (SQLException ex) {
@@ -110,22 +115,29 @@ public class Arbol extends RecursiveTreeObject<Arbol> {
 
         final TreeItem<Arbol> root = new RecursiveTreeItem<Arbol>(arboles, RecursiveTreeObject::getChildren);
 
-        treeView.getColumns().setAll(edad,estado_actual,plaga_o_enfermedad,cantidad_de_arboles,cultivo);
-
+        treeView.getColumns().setAll(edad, estado_actual, plaga_o_enfermedad, cantidad_de_arboles, cultivo);
+        //edad, estado_actual, plaga_o_enfermedad, cultivo, cuadro
         treeView.setRoot(root);
         treeView.setEditable(true);
+        ObservableList<String> estados = FXCollections.observableArrayList("Bueno","Malo","En pausa");
+        ObservableList Enfermedades = FXCollections.observableArrayList("Pulgon negro", "Pulgon blanco","Pulgon amarillo","Topos","Ninguna");
+        ObservableList cultivos = FXCollections.observableArrayList("Nuez","Chile","Sandia","Melon");
+        estado_actual.setCellFactory(ComboBoxTreeTableCell.forTreeTableColumn(estados));
+        plaga_o_enfermedad.setCellFactory(ComboBoxTreeTableCell.forTreeTableColumn(Enfermedades));
+        cultivo.setCellFactory(ComboBoxTreeTableCell.forTreeTableColumn(cultivos));
         cantidad_de_arboles.setCellFactory(TextFieldTreeTableCell.forTreeTableColumn());
         treeView.setShowRoot(false);
 
     }
-    public static void eliminarConTecla(JFXTreeTableView treeView,Connection connection){
+
+    public static void eliminarConTecla(JFXTreeTableView treeView, Connection connection) {
         int row = treeView.getSelectionModel().getSelectedIndex();
         try {
             com.mysql.jdbc.PreparedStatement ps = (PreparedStatement) connection.prepareStatement("SELECT * FROM arbol");
             ResultSet rs = ps.executeQuery();
             int aux = 0;
-            while (rs.next()){
-                if ( aux == row){
+            while (rs.next()) {
+                if (aux == row) {
                     try {
                         Connection con = (Connection) DBConnection.getConnection();
 
@@ -133,7 +145,9 @@ public class Arbol extends RecursiveTreeObject<Arbol> {
                         preparedStatement.setInt(1, rs.getInt(1));
                         preparedStatement.executeUpdate();
 
-                    }catch (SQLException e){e.printStackTrace();}
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
                 }
                 aux++;
             }
@@ -141,14 +155,15 @@ public class Arbol extends RecursiveTreeObject<Arbol> {
 
         }
     }
-    public static void buscarArbol(JFXTextField textField, JFXTreeTableView treeView){
+
+    public static void buscarArbol(JFXTextField textField, JFXTreeTableView treeView) {
         textField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 treeView.setPredicate(new Predicate<TreeItem<Arbol>>() {
                     @Override
                     public boolean test(TreeItem<Arbol> treeItem) {
-                        boolean flag= treeItem.getValue().cuadro.getValue().contains(newValue);
+                        boolean flag = treeItem.getValue().cuadro.getValue().contains(newValue);
                         return flag;
                     }
                 });
@@ -156,5 +171,15 @@ public class Arbol extends RecursiveTreeObject<Arbol> {
         });
     }
 
+    public void setEstado_actual(String estado_actual) {
+        this.estado_actual = new SimpleStringProperty(estado_actual);
+    }
 
+    public void setPlaga_o_enfermedad(String plaga_o_enfermedad) {
+        this.plaga_o_enfermedad = new SimpleStringProperty(plaga_o_enfermedad);
+    }
+
+    public void setCultivo(String cultivo) {
+        this.cultivo = new SimpleStringProperty(cultivo);
+    }
 }

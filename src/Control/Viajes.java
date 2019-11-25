@@ -33,6 +33,8 @@ public class Viajes implements Initializable {
     @FXML
     void agregar(){
         Vista.agregarFilaViajes(stackPane,estado,destino,fechaViaje,conductor,comentario);
-
+        destino.clear();
+        conductor.clear();
+        comentario.clear();
     }
 }

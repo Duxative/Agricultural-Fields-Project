@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
@@ -15,8 +16,10 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class Ventanas {
+public class Ventanas implements Initializable {
 // Acciones de ventana en general
 
 
@@ -49,11 +52,13 @@ public class Ventanas {
 
     }
 
+
     public static void cerrarVentanaActual(MouseEvent event) {
         JFXButton btn = (JFXButton) event.getSource();
         Stage current = (Stage) btn.getScene().getWindow();
         current.close();
     }
+
     public static void cerrarVentanaActual(JFXButton btn) {
 
         Stage current = (Stage) btn.getScene().getWindow();
@@ -99,6 +104,10 @@ public class Ventanas {
         abrirVentana("/Vistas/Viajes.fxml", "Viajes", 310, 280);
     }
 
+    public static void abrirVariedad() {
+        abrirVentana("/Vistas/Variedad.fxml", "Viajes", 180, 280);
+    }
+
     public static void popAlert(StackPane stackPane, String titulo, String texto) {
         JFXDialogLayout dialogLayout = new JFXDialogLayout();
         dialogLayout.setHeading(new Text(titulo));
@@ -117,4 +126,8 @@ public class Ventanas {
     }
 
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
 }

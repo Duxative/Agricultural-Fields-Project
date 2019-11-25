@@ -6,10 +6,10 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#abrirVentaAccion" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Recetas">
+<StackPane fx:id="stackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#abrirVentaAccion" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Recetas">
 
    <children>
-      <AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: WHITE;">
+      <AnchorPane fx:id="anchorPane" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: WHITE;">
          <children>
             <ImageView fitHeight="68.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -80,7 +80,7 @@
                </children></Pane>
             <Pane prefHeight="768.0" prefWidth="200.0" stylesheets="@../CSS/buttons.css">
                 <children>
-                    <JFXButton layoutX="25.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#btnDash" prefHeight="40.0" prefWidth="150.0" text="Dashboard">
+                    <JFXButton fx:id="dashboard" layoutX="25.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#btnDash" prefHeight="40.0" prefWidth="150.0" text="Dashboard">
                         <graphic>
                             <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-23.0">
                                 <image>
@@ -107,7 +107,7 @@
                             </ImageView>
                         </graphic>
                     </JFXButton>
-                    <JFXButton layoutX="35.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#btnEnfermedades" prefHeight="40.0" prefWidth="150.0" text="Enfermedades">
+                    <JFXButton fx:id="enfermedades" layoutX="35.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#btnEnfermedades" prefHeight="40.0" prefWidth="150.0" text="Enfermedades">
                         <graphic>
                             <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-22.0">
                                 <image>

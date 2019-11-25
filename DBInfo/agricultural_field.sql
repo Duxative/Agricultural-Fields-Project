@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-11-2019 a las 14:55:40
+-- Tiempo de generación: 25-11-2019 a las 13:09:52
 -- Versión del servidor: 10.4.8-MariaDB
 -- Versión de PHP: 7.3.11
 
@@ -37,6 +37,16 @@ CREATE TABLE `arbol` (
   `cultivo` varchar(35) NOT NULL,
   `cuadro` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `arbol`
+--
+
+INSERT INTO `arbol` (`ID_arb`, `edad`, `estado_actual`, `plaga_o_enfermedad`, `cantidad_de_arboles`, `cultivo`, `cuadro`) VALUES
+(4, 10, 'bueno', 'ninguna', 200, 'Nuez', '7A'),
+(5, 2, 'Bueno', 'ninguna', 500, 'Sandia', '7B'),
+(6, 3, 'Malo', 'Topos', 650, 'Melon', '8A'),
+(7, 3, 'Malo', 'Enfermedad X', 190, 'Chile', '8B');
 
 -- --------------------------------------------------------
 
@@ -98,9 +108,28 @@ CREATE TABLE `daños` (
 
 INSERT INTO `daños` (`ID_dam`, `Lugar`, `Sintoma`, `Causa`, `cuadro`) VALUES
 (1, 'Hoja', 'mielosa', 'Humedad', '7A'),
-(2, 'raiz', 'rota', 'topos', '7B'),
-(4, 'Hoja', 'Pulgon blanco', 'Clima', '7A'),
-(5, 'Hoja', 'Pulgon blanco', 'No se', '7A');
+(8, 'asd', 'Pulgon blanco', 'Garrapatas', '7A'),
+(9, 'asd', 'Pulgon amarillo', 'asd', '7A');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `enfermedades`
+--
+
+CREATE TABLE `enfermedades` (
+  `ID_ENF` int(10) NOT NULL,
+  `enfermedades` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `enfermedades`
+--
+
+INSERT INTO `enfermedades` (`ID_ENF`, `enfermedades`) VALUES
+(1, 'Pulgon blanco'),
+(2, 'Pulgon negro'),
+(3, 'Pulgon amarillo');
 
 -- --------------------------------------------------------
 
@@ -144,10 +173,6 @@ CREATE TABLE `historial_acciones` (
 --
 
 INSERT INTO `historial_acciones` (`ID_HA`, `accion`, `fecha`, `cuadro`, `descripcion`, `producto`, `receta`, `clima`) VALUES
-(1, 'agregar', 'ayer', '7B', 'Pos que te puedo decir? al chile no se', 'agua', 'ninguna', 'Seco'),
-(2, 'Se agrego', 'Fecha actual', '7A', 'Rodado', 'Producto: Austar', 'nombre de receta', 'ASD'),
-(3, 'a', '2019-11-22', '7A', 'a', 'a', 'Ninguna', 'a'),
-(4, 'a', '2019-11-22', '7A', 'a', 'a', 'Ninguna', 'a'),
 (5, 'a', '2019-11-22', '7B', 'a', 'a', 'Ninguna', 'a');
 
 -- --------------------------------------------------------
@@ -170,8 +195,7 @@ CREATE TABLE `inventario` (
 --
 
 INSERT INTO `inventario` (`ID_INV`, `categoria`, `producto`, `cantidad`, `Descripcion`, `Estado`) VALUES
-(1, 'Herramientas', 'Martillo', 7, 'Martillos normales', 'Disponible'),
-(2, 'Fertilizantes', 'Acadian', 15, 'Fertilizante en litros', 'No disponible');
+(1, 'Herramientas', 'Martillo', 17, 'Martillos normales', 'Disponible');
 
 -- --------------------------------------------------------
 
@@ -190,6 +214,13 @@ CREATE TABLE `nuez` (
   `aceitosa` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `nuez`
+--
+
+INSERT INTO `nuez` (`ID_nuez`, `variedad`, `de_primera`, `quebrada`, `germinada`, `vana`, `con_ruez`, `aceitosa`) VALUES
+(1, 'Western', 2, 2, 2, 2, 2, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -202,6 +233,16 @@ CREATE TABLE `problema_en_cuadros` (
   `fecha` varchar(20) NOT NULL,
   `problema` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `problema_en_cuadros`
+--
+
+INSERT INTO `problema_en_cuadros` (`ID_PEC`, `cuadro`, `fecha`, `problema`) VALUES
+(3, '7A', '2019-11-24', 'Pulgon blanco'),
+(4, '7A', 'hoy', 'Inventado'),
+(5, '7A', '2019-11-25', 'Pulgon blanco'),
+(6, '7A', '2019-11-25', 'Pulgon amarillo');
 
 -- --------------------------------------------------------
 
@@ -246,7 +287,10 @@ CREATE TABLE `terreno` (
 --
 
 INSERT INTO `terreno` (`ID_terreno`, `fertilidad`, `estado_actual`, `tipo_riego`, `fecha`, `cuadro`) VALUES
-(1, 'musha', 'bueno', 'goteo', 'hoy', '7B');
+(1, 'Alta', 'bueno', 'goteo', 'hoy', '7B'),
+(2, 'Baja', 'Malo', 'Rodado', 'Hoy', '7A'),
+(3, 'Media', 'Pausa', 'Goteo', 'Hoy', '8A'),
+(4, 'Alta', 'bueno', 'Goteo', 'Hoy', '8B');
 
 -- --------------------------------------------------------
 
@@ -283,6 +327,13 @@ CREATE TABLE `viajes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Volcado de datos para la tabla `viajes`
+--
+
+INSERT INTO `viajes` (`ID_IDV`, `destino`, `estado`, `fecha`, `conductor`, `comentario`) VALUES
+(6, 'Hawaii', 'Completo', '2019-11-24', 'asd', 'asd');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -309,6 +360,12 @@ ALTER TABLE `cuadros`
 --
 ALTER TABLE `daños`
   ADD PRIMARY KEY (`ID_dam`);
+
+--
+-- Indices de la tabla `enfermedades`
+--
+ALTER TABLE `enfermedades`
+  ADD PRIMARY KEY (`ID_ENF`);
 
 --
 -- Indices de la tabla `estado`
@@ -372,7 +429,7 @@ ALTER TABLE `viajes`
 -- AUTO_INCREMENT de la tabla `arbol`
 --
 ALTER TABLE `arbol`
-  MODIFY `ID_arb` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID_arb` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `categorias`
@@ -390,7 +447,13 @@ ALTER TABLE `cuadros`
 -- AUTO_INCREMENT de la tabla `daños`
 --
 ALTER TABLE `daños`
-  MODIFY `ID_dam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID_dam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT de la tabla `enfermedades`
+--
+ALTER TABLE `enfermedades`
+  MODIFY `ID_ENF` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `estado`
@@ -414,13 +477,13 @@ ALTER TABLE `inventario`
 -- AUTO_INCREMENT de la tabla `nuez`
 --
 ALTER TABLE `nuez`
-  MODIFY `ID_nuez` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_nuez` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `problema_en_cuadros`
 --
 ALTER TABLE `problema_en_cuadros`
-  MODIFY `ID_PEC` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID_PEC` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `recetas`
@@ -432,7 +495,7 @@ ALTER TABLE `recetas`
 -- AUTO_INCREMENT de la tabla `terreno`
 --
 ALTER TABLE `terreno`
-  MODIFY `ID_terreno` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID_terreno` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `tipe_de_riego`
@@ -444,7 +507,7 @@ ALTER TABLE `tipe_de_riego`
 -- AUTO_INCREMENT de la tabla `viajes`
 --
 ALTER TABLE `viajes`
-  MODIFY `ID_IDV` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID_IDV` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

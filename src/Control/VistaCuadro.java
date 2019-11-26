@@ -48,6 +48,12 @@ public class VistaCuadro implements Initializable {
 
     @FXML
     void actualizar(MouseEvent click){
+        Vista.llenarTablasDeCuadro(tablaArbol,cuadroDaño,cuadroTerreno,cuadroHistorial,connection);
+        arbol.setText(titulo.getText().substring(7,8));
+        terreno.setText(titulo.getText().substring(7,8));
+        daños.setText(titulo.getText().substring(7,8));
+        historial.setText(titulo.getText().substring(7,8));
+        Vista.establecerInformacionDeTablas(arbol,daños,terreno,historial,tablaArbol,cuadroDaño,cuadroTerreno,cuadroHistorial);
 
     }
     @FXML

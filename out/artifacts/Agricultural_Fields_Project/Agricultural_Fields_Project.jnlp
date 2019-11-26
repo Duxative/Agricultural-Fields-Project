@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Agricultural_Fields_Project.jnlp">
+    <information>
+        <title>Agricultural-Fields-Project</title>
+        <vendor>Eduardo Ramirez</vendor>
+        <description>This software was made to help the engineers to manage the agricultural fields</description>
+        <offline-allowed/>
+    </information>
+    <update check="background"/>
+    <resources>
+        <j2se version="9.0.4+" href="http://java.sun.com/products/autodl/j2se"/>
+        <jar href="Agricultural_Fields_Project.jar" size="1469973" download="eager"/>
+        <jar href="jfoenix-9.0.8.jar" size="2419463" download="eager"/>
+        <jar href="mysql-connector-java-5.1.39.jar" size="989495" download="eager"/>
+    </resources>
+    <jfx:javafx-desc width="1366" height="768" main-class="App" name="App"/>
+</jnlp>
+

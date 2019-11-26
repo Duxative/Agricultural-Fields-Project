@@ -1,0 +1,30 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Agricultural-Fields-Project">
+    <output-path>$PROJECT_DIR$/out/artifacts/Agricultural_Fields_Project</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="App" />
+        <option name="description" value="This software was made to help the engineers to manage the agricultural fields" />
+        <option name="height" value="768" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="icons">
+          <JavaFxApplicationIcons>
+            <option name="linuxIcon" value="$PROJECT_DIR$/src/Images/icono.png" />
+            <option name="windowsIcon" value="$PROJECT_DIR$/src/Images/AgriculturalIcon.ico" />
+          </JavaFxApplicationIcons>
+        </option>
+        <option name="title" value="Agricultural-Fields-Project" />
+        <option name="vendor" value="Eduardo Ramirez" />
+        <option name="version" value="0.1" />
+        <option name="width" value="1366" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="Agricultural_Fields_Project.jar">
+        <element id="module-output" name="Agricultural-Fields-Project" />
+        <element id="library" level="project" name="jfoenix-9.0.8" />
+        <element id="library" level="project" name="mysql-connector-java-5.1.39" />
+      </element>
+    </root>
+  </artifact>
+</component>

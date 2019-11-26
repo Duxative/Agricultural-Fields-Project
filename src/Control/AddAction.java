@@ -30,6 +30,7 @@ public class AddAction implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         fecha.setValue(LocalDate.now());
         Vista.llenarComboCuadros(cuadro,connection);
+        Vista.llenarComboBoxRecetasCuadro(receta,connection);
 
     }
 

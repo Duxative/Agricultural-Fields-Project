@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <SCRIPT src="https://java.com/js/dtjava.js"></SCRIPT><script>
+    function launchApplication(jnlpfile) {
+        dtjava.launch(            {
+                url : 'Agricultural_Fields_Project.jnlp'
+            },
+            {
+                javafx : '9.0.4+'
+            },
+            {}
+        );
+        return false;
+    }
+</script><script>
+    function javafxEmbedApp() {
+        dtjava.embed(
+            {
+                id : 'App',
+                url : 'Agricultural_Fields_Project.jnlp',
+                placeholder : 'javafx-app-placeholder',
+                width : '1366',
+                height : '768'
+            },
+            {
+                javafx : '9.0.4+'
+            },
+            {}
+        );
+    }
+    
+            <!-- Embed FX application into web page once page is loaded -->
+    dtjava.addOnloadCallback(javafxEmbedApp);
+</script>
+    </head>
+    <body>
+        <h2>
+            Test page for <b>App</b>
+        </h2>
+        <b>Webstart:</b><a href="Agricultural_Fields_Project.jnlp" onclick="return launchApplication('Agricultural_Fields_Project.jnlp');">click to launch this app as webstart</a>
+        <br>
+        <hr>
+        <br>
+        
+        <!-- Applet will be inserted here -->
+        <div id="javafx-app-placeholder"></div>
+    </body>
+</html>

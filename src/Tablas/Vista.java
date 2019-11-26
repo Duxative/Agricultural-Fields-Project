@@ -46,6 +46,19 @@ public class Vista {
             ex.printStackTrace();
         }
     }
+    public static void llenarComboBoxRecetasCuadro(JFXComboBox comboBox1, Connection connection) {
+        try {
+
+            com.mysql.jdbc.PreparedStatement ps = (PreparedStatement) connection.prepareStatement("SELECT * FROM recetas");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                comboBox1.getItems().add(rs.getString(2));
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
 
     public static void llenarComboCategorias(JFXComboBox comboBox, JFXComboBox comboBox2, Connection connection) {
         try {
